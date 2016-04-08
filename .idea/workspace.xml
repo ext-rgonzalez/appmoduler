@@ -2,85 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d231b84-2b40-4640-b589-979b580c417c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/COMPOSER_RELEASE_NOTES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/COPYING.lib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/INHERITANCE_RELEASE_NOTES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/NEW_FEATURES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/SMARTY_2_BC_NOTES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/SMARTY_3.0_BC_NOTES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/SMARTY_3.1_NOTES.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/change_log.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/configs/test.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/cacheresource.apc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/cacheresource.memcache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/cacheresource.mysql.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/cacheresource.pdo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/cacheresource.pdo_gzip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/resource.extendsall.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/resource.mysql.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/plugins/resource.mysqls.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/templates/footer.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/templates/header.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/demo/templates/index.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/lexer/smarty_internal_configfilelexer.plex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/lexer/smarty_internal_configfileparser.y" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/lexer/smarty_internal_templatelexer.plex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/lexer/smarty_internal_templateparser.y" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/Autoloader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/Smarty.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/SmartyBC.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/debug.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/block.textformat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.counter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.cycle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.fetch.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_checkboxes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_options.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_radios.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_select_date.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_select_time.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.html_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.mailto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/function.math.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.capitalize.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.date_format.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.debug_print_var.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.escape.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.regex_replace.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.replace.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.spacify.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifier.truncate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.cat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.count_characters.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.count_paragraphs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.count_sentences.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.count_words.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.default.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.escape.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.from_charset.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.indent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.lower.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.noprint.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.string_format.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.strip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.strip_tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.to_charset.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.unescape.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.upper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/modifiercompiler.wordwrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/outputfilter.trimwhitespace.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/libs/plugins/shared.escape_special_chars.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/smarty-master/travis.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="appmoduler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,37 +17,6 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DatabaseView">
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - appmoduler@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - appmoduler@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -379,23 +270,22 @@
       <option name="number" value="Default" />
       <updated>1448850419395</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit smarty libreria">
+      <created>1460137719171</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1460137719171</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.49234137" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15506808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.49573562" order="9" side_tool="false" content_ui="tabs" />
@@ -434,16 +324,12 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit smarty libreria" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit smarty libreria" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
