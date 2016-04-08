@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> SmartAdmin </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.css">
+
+		<!-- SmartAdmin RTL Support is under construction
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.css"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.css">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+	</head>
+	<body class="">
+		<!-- POSSIBLE CLASSES: minified, fixed-ribbon, fixed-header, fixed-width
+			 You can also add different skin classes such as "smart-skin-1", "smart-skin-2" etc...-->
+		
+		<!-- HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/mail.html">
+							Msgs (14) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/notifications.html">
+							notify (3) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/tasks.html">
+							Tasks (4) </label>
+					</div>
+
+					<!-- notification content -->
+					<div class="ajax-notifications custom-scroll">
+
+						<div class="alert alert-transparent">
+							<h4>Click a button to show messages here</h4>
+							This blank page message helps protect your privacy, or you can show the first message here automatically.
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- end notification content -->
+
+					<!-- footer: refresh area -->
+					<span> Last updated on: 12/12/2013 9:43AM
+						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> </span>
+					<!-- end footer -->
+
+				</div>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- projects dropdown -->
+			<div id="project-context">
+
+				<span class="label">Projects:</span>
+				<span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
+
+				<!-- Suggestion: populate this list with fetch and push technique -->
+				<ul class="dropdown-menu">
+					<li>
+						<a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">Notes on pipeline upgradee</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">Assesment Report for merchant account</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+					</li>
+				</ul>
+				<!-- end dropdown-menu-->
+
+			</div>
+			<!-- end projects dropdown -->
+
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="login.html" title="Sign Out" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				<div id="search-mobile" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+				</div>
+				<!-- end search mobile button -->
+
+				<!-- input: search field -->
+				<form action="#ajax/search.html" class="header-search pull-right">
+					<input type="text" name="param" placeholder="Find reports and more" id="search-fld">
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+				</form>
+				<!-- end input: search field -->
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" onclick="launchFullscreen(document.documentElement);" title="Full Screen"><i class="fa fa-fullscreen"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+
+				<!-- multiple lang dropdown : find all flags in the image folder -->
+				<ul class="header-dropdown-list hidden-xs">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+						<ul class="dropdown-menu pull-right">
+							<li class="active">
+								<a href="javascript:void(0);"><img alt="" src="img/flags/us.png"> US</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img alt="" src="img/flags/es.png"> Spanish</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img alt="" src="img/flags/de.png"> German</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- end multiple lang -->
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+					<a href="javascript:void(0);" id="show-shortcut">
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span>
+							john.doe 
+						</span>
+						<i class="fa fa-angle-down"></i>
+					</a> 
+					
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive
+
+			To make this navigation dynamic please make sure to link the node
+			(the reference to the nav > ul) after page load. Or the navigation
+			will not initialize.
+			-->
+			<nav>
+				<!-- NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li class="">
+						<a href="ajax/dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>
+						<a href="ajax/inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphs</span></a>
+						<ul>
+							<li>
+								<a href="ajax/flot.html">Flot Chart</a>
+							</li>
+							<li>
+								<a href="ajax/morris.html">Morris Charts</a>
+							</li>
+							<li>
+								<a href="ajax/inline-charts.html">Inline Charts</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Tables</span></a>
+						<ul>
+							<li>
+								<a href="ajax/table.html">Normal Tables</a>
+							</li>
+							<li>
+								<a href="ajax/datatables.html">Data Tables</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Forms</span></a>
+						<ul>
+							<li>
+								<a href="ajax/form-elements.html">Smart Form Elements</a>
+							</li>
+							<li>
+								<a href="ajax/form-templates.html">Smart Form Layouts</a>
+							</li>
+							<li>
+								<a href="ajax/validation.html">Smart Form Validation</a>
+							</li>
+							<li>
+								<a href="ajax/bootstrap-forms.html">Bootstrap Form Elements</a>
+							</li>
+							<li>
+								<a href="ajax/plugins.html">Form Plugins</a>
+							</li>
+							<li>
+								<a href="ajax/wizard.html">Wizards</a>
+							</li>
+							<li>
+								<a href="ajax/other-editors.html">Bootstrap Editors</a>
+							</li>
+							<li>
+								<a href="ajax/dropzone.html">Dropzone <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">UI Elements</span></a>
+						<ul>
+							<li>
+								<a href="ajax/general-elements.html">General Elements</a>
+							</li>
+							<li>
+								<a href="ajax/buttons.html">Buttons</a>
+							</li>
+							<li>
+								<a href="#">Icons</a>
+								<ul>
+									<li>
+										<a href="ajax/fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
+									</li>
+									<li>
+										<a href="ajax/glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="ajax/grid.html">Grid</a>
+							</li>
+							<li>
+								<a href="ajax/treeview.html">Tree View</a>
+							</li>
+							<li>
+								<a href="ajax/nestable-list.html">Nestable Lists</a>
+							</li>
+							<li>
+								<a href="ajax/jqui.html">JQuery UI</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-folder-open"></i> <span class="menu-item-parent">6 Level Navigation</span></a>
+						<ul>
+							<li>
+								<a href="#"><i class="fa fa-fw fa-folder-open"></i> 2nd Level</a>
+								<ul>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
+										<ul>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+											</li>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 4th Level</a>
+												<ul>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+													</li>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-folder-open"></i> 5th Level</a>
+														<ul>
+															<li>
+																<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+															</li>
+															<li>
+																<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-fw fa-folder-open"></i> Folder</a>
+
+								<ul>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
+										<ul>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+											</li>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="ajax/calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
+					</li>
+					<li>
+						<a href="ajax/widgets.html"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Widgets</span></a>
+					</li>
+					<li>
+						<a href="ajax/gallery.html"><i class="fa fa-lg fa-fw fa-picture-o"></i> <span class="menu-item-parent">Gallery</span></a>
+					</li>
+					<li>
+						<a href="ajax/gmap-xml.html"><i class="fa fa-lg fa-fw fa-map-marker"></i> <span class="menu-item-parent">Google Map Skins</span><span class="badge bg-color-greenLight pull-right inbox-badge">9</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-windows"></i> <span class="menu-item-parent">Miscellaneous</span></a>
+						<ul>
+							<li>
+								<a href="ajax/typography.html">Typography</a>
+							</li>
+							<li>
+								<a href="ajax/pricing-table.html">Pricing Tables</a>
+							</li>
+							<li>
+								<a href="ajax/invoice.html">Invoice</a>
+							</li>
+							<li>
+								<a href="login.html" target="_top">Login</a>
+							</li>
+							<li>
+								<a href="register.html" target="_top">Register</a>
+							</li>
+							<li>
+								<a href="lock.html" target="_top">Locked Screen</a>
+							</li>
+							<li>
+								<a href="ajax/error404.html">Error 404</a>
+							</li>
+							<li>
+								<a href="ajax/error500.html">Error 500</a>
+							</li>
+							<li>
+								<a href="ajax/blank_.html">Blank Page</a>
+							</li>
+							<li>
+								<a href="ajax/email-template.html">Email Template</a>
+							</li>
+							<li>
+								<a href="ajax/search.html">Search Page</a>
+							</li>
+							<li>
+								<a href="ajax/ckeditor.html">CK Editor</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-file"></i> <span class="menu-item-parent">Other Pages</span></a>
+						<ul>
+							<li>
+								<a href="ajax/forum.html">Forum Layout</a>
+							</li>
+							<li>
+								<a href="ajax/profile.html">Profile</a>
+							</li>
+							<li>
+								<a href="ajax/timeline.html">Timeline</a>
+							</li>
+						</ul>	
+					</li>
+				</ul>
+			</nav>
+			<span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> <span id="refresh" class="btn btn-ribbon" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span> </span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<!-- This is auto generated -->
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+
+			</div>
+			<!-- END RIBBON -->
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+				
+
+
+<div class="row">
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark"><i class="fa fa-desktop fa-fw "></i> 
+			UI Elements 
+			<span>>
+			Tree View
+			</span>
+		</h1>
+	</div>
+	<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+		<ul id="sparks" class="">
+			<li class="sparks-info">
+				<h5> My Income <span class="txt-color-blue">$47,171</span></h5>
+				<div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+					1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
+				</div>
+			</li>
+			<li class="sparks-info">
+				<h5> Site Traffic <span class="txt-color-purple"><i class="fa fa-arrow-circle-up" data-rel="bootstrap-tooltip" title="Increased"></i>&nbsp;45%</span></h5>
+				<div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+					110,150,300,130,400,240,220,310,220,300, 270, 210
+				</div>
+			</li>
+			<li class="sparks-info">
+				<h5> Site Orders <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5>
+				<div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
+					110,150,300,130,400,240,220,310,220,300, 270, 210
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- widget grid -->
+<section id="widget-grid" class="">
+
+	<!-- row -->
+	<div class="row">
+
+		<!-- NEW WIDGET START -->
+		<article class="col-sm-12 col-md-12 col-lg-1">
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget jarviswidget-color-orange" id="wid-id-0" data-widget-editbutton="false">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-lg fa-calendar"></i> </span>
+					<h2>Organizing view </h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<div class="widget-body-toolbar bg-color-white">
+
+							<form class="form-inline" role="form">
+
+								<div class="row">
+
+									<div class="col-sm-12 col-md-10">
+
+										<div class="form-group">
+											<label class="sr-only">Task title</label>
+											<input type="email" class="form-control input-sm" placeholder="My Task">
+										</div>
+										<div class="form-group">
+											<label class="sr-only">Pick Week</label>
+											<select class="form-control input-sm">
+												<option>Week 1</option>
+												<option>Week 2</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="sr-only">Days</label>
+											<select class="form-control input-sm">
+												<option>Monday</option>
+												<option>Tuesday</option>
+												<option>Wednesday</option>
+												<option>Thursday</option>
+												<option>Friday</option>
+												<option>Saturday</option>
+												<option>Sunday</option>
+											</select>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12 col-md-2 text-align-right">
+
+										<button type="submit" class="btn btn-warning btn-xs">
+											<i class="fa fa-plus"></i> Add
+										</button>
+
+									</div>
+
+								</div>
+
+							</form>
+
+						</div>
+
+						<div class="tree">
+							<ul>
+								<li>
+									<span><i class="fa fa-lg fa-calendar"></i> 2013, Week 2</span>
+									<ul>
+										<li>
+											<span class="label label-success"><i class="fa fa-lg fa-plus-circle"></i> Monday, January 7: 8.00 hours</span>
+											<ul>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 8.00</span> &ndash; <a href="javascript:void(0);">Changed CSS to accomodate...</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<span class="label label-success"><i class="fa fa-lg fa-minus-circle"></i> Tuesday, January 8: 8.00 hours</span>
+											<ul>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 6.00</span> &ndash; <a href="javascript:void(0);">Altered code...</a>
+												</li>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 2.00</span> &ndash; <a href="javascript:void(0);">Simplified our approach to...</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<span class="label label-warning"><i class="fa fa-lg fa-minus-circle"></i> Wednesday, January 9: 6.00 hours</span>
+											<ul>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 3.00</span> &ndash; <a href="javascript:void(0);">Fixed bug caused by...</a>
+												</li>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 3.00</span> &ndash; <a href="javascript:void(0);">Comitting latest code to Git...</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<span class="label label-danger"><i class="fa fa-lg fa-minus-circle"></i> Wednesday, January 9: 4.00 hours</span>
+											<ul>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 2.00</span> &ndash; <a href="javascript:void(0);">Create component that...</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<span><i class="fa fa-lg fa-calendar"></i> 2013, Week 3</span>
+									<ul>
+										<li>
+											<span class="label label-success"><i class="fa fa-lg fa-minus-circle"></i> Monday, January 14: 8.00 hours</span>
+											<ul>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 7.75</span> &ndash; <a href="javascript:void(0);">Writing documentation...</a>
+												</li>
+												<li>
+													<span><i class="fa fa-clock-o"></i> 0.25</span> &ndash; <a href="javascript:void(0);">Reverting code back to...</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+		</article>
+		<!-- WIDGET END -->
+
+		<!-- NEW WIDGET START -->
+		<article class="col-sm-12 col-md-12 col-lg-11">
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget jarviswidget-color-blue" id="wid-id-1" data-widget-editbutton="false">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-sitemap"></i> </span>
+					<h2>Simple View </h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<div class="tree smart-form">
+							<!--<ul>
+								<li>
+									<span><i class="fa fa-lg fa-folder-open"></i> Parent</span>
+									<ul>
+										<li>
+											<span><i class="fa fa-lg fa-plus-circle"></i> Administrators</span>
+											<ul>
+												<li style="display:none">
+													<span> <label class="checkbox inline-block">
+															<input type="checkbox" name="checkbox-inline">
+															<i></i>Michael.Jackson</label> </span>
+												</li>
+												<li style="display:none">
+													<span> <label class="checkbox inline-block">
+															<input type="checkbox" checked="checked" name="checkbox-inline">
+															<i></i>Sunny.Ahmed</label> </span>
+												</li>
+												<li style="display:none">
+													<span> <label class="checkbox inline-block">
+															<input type="checkbox" checked="checked" name="checkbox-inline">
+															<i></i>Jackie.Chan</label> </span>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<span><i class="fa fa-lg fa-minus-circle"></i> Child</span>
+											<ul>
+												<li>
+													<span><i class="icon-leaf"></i> Grand Child</span>
+												</li>
+												<li>
+													<span><i class="icon-leaf"></i> Grand Child</span>
+												</li>
+												<li>
+													<span><i class="fa fa-lg fa-plus-circle"></i> Grand Child</span>
+													<ul>
+														<li style="display:none">
+															<span><i class="fa fa-lg fa-plus-circle"></i> Great Grand Child</span>
+															<ul>
+																<li style="display:none">
+																	<span><i class="fa fa-lg fa-plus-circle"></i> asdfsdf</span>
+																	<ul>
+																		<li style="display:none">
+																			<span><i class="fa fa-lg fa-plus-circle"></i> Graaaaaaaaaaaaaaa</span>
+																			<ul>
+																				<li style="display:none">
+																					<span><i class="icon-leaf"></i> Great great Grand Child</span>
+																				</li>
+																				<li style="display:none">
+																					<span><i class="icon-leaf"></i> Great great Grand Child</span>
+																				</li>
+																			</ul>
+																		</li>
+																		<li style="display:none">
+																			<span><i class="icon-leaf"></i> Great great Grand Child</span>
+																		</li>
+																	</ul>
+																</li>
+																<li style="display:none">
+																	<span><i class="icon-leaf"></i> Great great Grand Child</span>
+																</li>
+															</ul>
+														</li>
+														<li style="display:none">
+															<span><i class="icon-leaf"></i> Great Grand Child</span>
+														</li>
+														<li style="display:none">
+															<span><i class="icon-leaf"></i> Great Grand Child</span>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<span><i class="fa fa-lg fa-folder-open"></i> Parent2</span>
+									<ul>
+										<li>
+											<span><i class="icon-leaf"></i> Child</span>
+										</li>
+									</ul>
+								</li>
+							</ul> -->
+							
+							<ul><li><span><i class="fa fa-lg fa-folder-open"></i> PUC (Plan Unico de Cuentas)</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Activo</span><ul><li><span><i class="fa fa-lg fa-plus-circle"></i>Disponible - 11</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Caja - 1105</span><ul><li><span>Caja General - 110505</span></li><li><span>Cajas Menores - 110510</span></li><li><span>Moneda Extranjera - 110515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bancos - 1110</span><ul><li><span>Moneda Nacional - 111005</span></li><li><span>Moneda Extranjera - 111010</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Remesas en transito - 1115</span><ul><li><span>Moneda Nacional - 111505</span></li><li><span>Moneda Extranjera - 111510</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuentas de Ahorro - 1120</span><ul><li><span>Bancos - 112005</span></li><li><span>Corporaciones de ahorro y vivienda - 112010</span></li><li><span>Organismmos cooperativos financieros - 112015</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Inversiones - 12</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Acciones - 1205</span><ul><li><span>Agricultura, ganaderia, caza y silvicultura - 120505</span></li><li><span>Pesca - 120510</span></li><li><span>Explotacion de minas y canteras - 120515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuotas o partes de interes social - 1210</span><ul><li><span>Industia manufacturera - 120520</span></li><li><span>Agricultura, ganaderia, caza y silvicultura - 121005</span></li><li><span>Pesca - 121010</span></li><li><span>Explotacion de minas y canteras - 121015</span></li><li><span>Industia manufacturera - 121020</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bonos - 1215</span><ul><li><span>Bonos pulicos moneda nacional - 121505</span></li><li><span>Bonos pulicos moneda extranjera - 121510</span></li><li><span>Bonos Ordinarios - 121515</span></li><li><span>Bonos Convertibles en acciones - 121520</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cedulas - 1220</span><ul><li><span>Cedulas de capitalizacion - 122005</span></li><li><span>Cedulas Hipotecarias - 122010</span></li><li><span>Cedulas de inversion - 122015</span></li><li><span>Otras - 122090</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Certificados - 1225</span><ul><li><span>Certificados de cambio - 122520</span></li><li><span>Certificados cafeteros valorizables - 122525</span></li><li><span>Certificados electricos valorizables(CEV) - 122530</span></li><li><span>Certificados de reembolso tributario(CERT) - 122535</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Deudores - 13</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Clientes - 1305</span><ul><li><span>Nacionales - 130505</span></li><li><span>Del extrerior - 130510</span></li><li><span>Deudores del sistema - 130515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuentas corrientes comerciales - 1310</span><ul><li><span>Casa Matriz - 131005</span></li><li><span>Companias Vinculadas - 131010</span></li><li><span>Accionistas o socios - 131015</span></li><li><span>Particulares - 131020</span></li><li><span>Otras - 131020</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Propiedades, planta y equipo - 15</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Terrenos - 1504</span><ul><li><span>Urbanos - 150405</span></li><li><span>Rurales - 150410</span></li><li><span>Ajustes por inflacion - 150499</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Msteriales proyectos petroleros - 1506</span><ul><li><span>Tuberias y equipo - 150605</span></li><li><span>Costos de importacion de materiales - 150610</span></li><li><span>Proyectos de construccion - 150615</span></li><li><span>Ajsutes por inflacion - 150699</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Construcciones en curso - 1508</span><ul><li><span>Construcciones y Edificaciones - 150805</span></li><li><span>Acueductos, plantas y redes - 150810</span></li><li><span>Vias de comunicacion - 150815</span></li><li><span>Pozos Artesianos - 150820</span></li><li><span>Proyectos de exploracion - 150825</span></li><li><span>Proyectos de desarrollo - 150830</span></li><li><span>Ajustes por inflacion - 150899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Maquinarias y equipos en montaje - 1512</span><ul><li><span>Maquinaria y equipos - 151205</span></li><li><span>Equipo de oficina - 151210</span></li><li><span>Equipo de computacion y comunicacion - 151215</span></li><li><span>Equipo medico cientifico - 151220</span></li><li><span>Equipo de hoteles y restaurantes - 151225</span></li><li><span>Flota y equpo de transporte - 151230</span></li><li><span>Flota y equipo fluvial y/o maritimo - 151235</span></li><li><span>Flota y equpo aereo - 151240</span></li><li><span>Flota y equipo ferreo - 151245</span></li><li><span>Plantas y redes - 151250</span></li><li><span>Ajustes por inflacion - 151299</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Construcciones y edificaciones - 1516</span><ul><li><span>·Edificios - 151605</span></li><li><span>Oficinas - 151610</span></li><li><span>Almacenes - 151615</span></li><li><span>Fabricas y plantas industriales - 151620</span></li><li><span>Salas de exhibicion y ventas - 151625</span></li><li><span>Cafeteria y casinos - 151630</span></li><li><span>Silos - 151635</span></li><li><span>Invernaderos - 151640</span></li><li><span>Casetas y campamentos - 151645</span></li><li><span>Instalaciones agropecuarias - 151650</span></li><li><span>Vivienda para empleados y obreros - 151655</span></li><li><span>Terminal de buses y taxis - 151660</span></li><li><span>Terminal maritimo - 151663</span></li><li><span>Terminal ferreo - 151665</span></li><li><span>Parqueaderos, garajes y otros - 151670</span></li><li><span>Hangares - 151675</span></li><li><span>Bodegas - 151680</span></li><li><span>Otros - 151695</span></li><li><span>Ajustes por inflacion - 151699</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Maquinaria y equipò - 1520</span><ul><li><span>Ajustes por inflacion - 152099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Equipo de oficina - 1524</span><ul><li><span>Muebles y enceres - 152405</span></li><li><span>Equipos - 152410</span></li><li><span>Otros - 152495</span></li><li><span>Ajustes por inflacion - 152499</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Equipo de computacion y comunicacion - 1528</span><ul><li><span>Equipos de procesamiento de datos - 152805</span></li><li><span>Equipos de telecomunicaciones - 152810</span></li><li><span>Equipos de radio - 152815</span></li><li><span>Satelites y antenas - 152820</span></li><li><span>Lineas telefonicas - 152825</span></li><li><span>Otros - 152895</span></li><li><span>Ajustes por inflacion - 152899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Equipo medico - 1532</span><ul><li><span>Medico - 153205</span></li><li><span>Odontologico - 153210</span></li><li><span>Laboratorio - 153215</span></li><li><span>Instrumental - 153220</span></li><li><span>Otros - 153295</span></li><li><span>Ajustes por inflacion - 153299</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Equipos de hoteles y restaurantes - 1536</span><ul><li><span>De habitaciones - 153605</span></li><li><span>De comestibles y bebidas - 153610</span></li><li><span>Otros - 153695</span></li><li><span>Ajustes por inflacion - 153699</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Flota y equipo de trasporte - 1540</span><ul><li><span>Autos, camionetas y camperos - 154005</span></li><li><span>Camiones, volquetas y furgones - 154008</span></li><li><span>Tractomulas y remolques - 154010</span></li><li><span>Buses y busetas - 154015</span></li><li><span>Recolectores y contenedores - 154017</span></li><li><span>Montacargas - 154020</span></li><li><span>Palas y gruas - 154025</span></li><li><span>Motocicletas - 154030</span></li><li><span>Bicicletas - 154030</span></li><li><span>Estibas y carretaras - 154035</span></li><li><span>Bandas Transportadoras - 154040</span></li><li><span>Otros - 154095</span></li><li><span>Ajustes por inflacion - 154099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Flota y equipo fluvial y/o maritimo - 1544</span><ul><li><span>Buques - 154405</span></li><li><span>Lanchas - 154410</span></li><li><span>Remolcadoras - 154415</span></li><li><span>Botes - 154420</span></li><li><span>Boyas - 154425</span></li><li><span>Amarres - 154430</span></li><li><span>Conteneodres y chasises - 154435</span></li><li><span>Gabarras - 154440</span></li><li><span>Otros - 154495</span></li><li><span>Ajustes por inflacion - 154499</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Flota y equpo aereo - 1548</span><ul><li><span>Aviones - 154805</span></li><li><span>Avionetas - 154810</span></li><li><span>Helicopteros - 154815</span></li><li><span>Turbinas y motores - 154820</span></li><li><span>Manuales de entrenamiento personal tecnico - 154825</span></li><li><span>Equipos de vuelo - 154830</span></li><li><span>Otros - 154895</span></li><li><span>Ajustes por inflacion - 154899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Flota y equpo ferreo - 1552</span><ul><li><span>Locomotoras - 155205</span></li><li><span>Vagones - 155210</span></li><li><span>Redes ferreas - 155215</span></li><li><span>Otros - 155295</span></li><li><span>Ajustes por inflacion - 155299</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Acueductos, plantas y redes - 1556</span><ul><li><span>Instalaciones para agua y energia - 155605</span></li><li><span>Acueducto, acequias y canalizacion - 155610</span></li><li><span>Plantas de generacion hidraulica - 155615</span></li><li><span>Plantas de generacion termica - 155620</span></li><li><span>Plantas de generacion de gas - 155625</span></li><li><span>Plantas de generacion diesel, gasolina y petr - 155628</span></li><li><span>Plantas de distribucion - 155630</span></li><li><span>Plantas de transmision y subestaciones - 155635</span></li><li><span>Oleoductos - 155640</span></li><li><span>Gasoductos - 155645</span></li><li><span>Poliductos - 155647</span></li><li><span>Redes de distribucion - 155650</span></li><li><span>Redes de tratamiento - 155655</span></li><li><span>Redes de recoleccion de aguas negras - 155660</span></li><li><span>Instalaciones y equipo de bombeo - 155665</span></li><li><span>Redes de distribucion de vapor - 155670</span></li><li><span>Redes de aire - 155675</span></li><li><span>Redes alimentacion de gas - 155680</span></li><li><span>Redes externas de telefonia - 155682</span></li><li><span>Plantas deshidratadoras - 155685</span></li><li><span>Otros - 155695</span></li><li><span>Ajustes por inflacion - 155699</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Arammento de vigilancia - 1560</span><ul><li><span>Ajustes por inflacion - 156099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Envases y empaques - 1562</span><ul><li><span>Ajustes por inflacion - 156299</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Plantaciones agricolas y forestales - 1564</span><ul><li><span>Cultivos en desarrollo - 156405</span></li><li><span>Cultivos Amortizables - 156410</span></li><li><span>Ajustes por inflacion - 156499</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Vias de comunicacion - 1568</span><ul><li><span>Pavimentacion y patios - 156805</span></li><li><span>Visa - 156810</span></li><li><span>Puentes - 156815</span></li><li><span>Calles - 156820</span></li><li><span>Aerodromos - 156825</span></li><li><span>Otros - 156895</span></li><li><span>Ajustes por imflacion - 156899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Minas y canteras - 1572</span><ul><li><span>Minas - 157205</span></li><li><span>Canteras - 157210</span></li><li><span>Ajustes por inflacion - 157299</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Yacimientos - 1580</span><ul><li><span>Ajustes por inflacion - 158099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Semovientes - 1584</span><ul><li><span>Ajustes por inflacion - 158499</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Propiedades, planta y equipo en transito - 1588</span><ul><li><span>Maquinaria y equipo - 158805</span></li><li><span>Equipo de oficina - 158810</span></li><li><span>Equpo de computacion y comunicacion - 158815</span></li><li><span>Equipo medico-cientifico - 158820</span></li><li><span>Equipo de hoteles y restaurantes - 158825</span></li><li><span>Flota y equipo de transporte - 158830</span></li><li><span>flota y equipo fluvial y/o maritimo - 158835</span></li><li><span>Flota y equipo aereo - 158840</span></li><li><span>Flota y equipo ferreo - 158845</span></li><li><span>Plantas y redes - 158850</span></li><li><span>Armamento de vigilancia - 158855</span></li><li><span>Semovientes - 158860</span></li><li><span>Envases y empaques - 158865</span></li><li><span>Ajustes por inflacion - 158899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depreciacion acumulada - 1592</span><ul><li><span>Construcciones y edificaciones - 159205</span></li><li><span>Maquinaria y/o equipo - 159210</span></li><li><span>Equipo de oficina - 159215</span></li><li><span>Equipo de computacion y comunicacion - 159220</span></li><li><span>Equipo medico-cientifico - 159225</span></li><li><span>Equipo de hoteles y restaurantes - 159230</span></li><li><span>Flota y equipo de transporte - 159235</span></li><li><span>Flota y equipo fluvial y/o maritimo - 159240</span></li><li><span>flota y equipo aereo - 159245</span></li><li><span>Flota y equipo ferreo - 159250</span></li><li><span>Acueducto, plantas y redes - 159255</span></li><li><span>Arammento de vigilancia - 159260</span></li><li><span>Envases y empaques - 159265</span></li><li><span>Ajustes por inflacion - 159299</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depreciacion diferida - 1596</span><ul><li><span>Exceso fiscal sobre la contable - 159605</span></li><li><span>Defecto fiscal sobre la contable(CR) - 159610</span></li><li><span>Ajustes por inflacion - 159699</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Amortizacion acumulada - 1597</span><ul><li><span>Plantaciones agricolas y forestales - 159705</span></li><li><span>Visa de comunicacion - 159710</span></li><li><span>Semovientes - 159715</span></li><li><span>Ajustes por inflacion - 159799</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Agotamiento Acumulado - 1598</span><ul><li><span>Minas y canteras - 159805</span></li><li><span>Pozos artesianos - 159815</span></li><li><span>Yacimientos - 159820</span></li><li><span>Ajustes por inflacion - 159899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones - 1599</span><ul><li><span>Terrenos - 159904</span></li><li><span>Materiales proyectos petroleros - 159908</span></li><li><span>Maquinaria y montaje - 159912</span></li><li><span>Construcciones y edificaciones - 159916</span></li><li><span>Maquinaria y equipo - 159920</span></li><li><span>Equipo de oficina - 159924</span></li><li><span>Equipo de computacion y comunicacion - 159928</span></li><li><span>Equipo medico-cientifico - 159932</span></li><li><span>Equipo de hoteles y restaurantes - 159936</span></li><li><span>Flota y equipo de transporte - 159940</span></li><li><span>Flota y equipo fluvial y/o maritimo - 159944</span></li><li><span>Flota y equipo aereo - 159948</span></li><li><span>Flota y equipo ferreo - 159952</span></li><li><span>Acueductos, plantas y redes - 159956</span></li><li><span>Armamento de vigilancia - 159960</span></li><li><span>Envases y empaques - 159962</span></li><li><span>Plantaciones agricolas - 159964</span></li><li><span>Vias de comunicacion - 159968</span></li><li><span>Minas y canteras - 159972</span></li><li><span>Pozos artesanios - 159980</span></li><li><span>Yacimientos - 159984</span></li><li><span>Semoviente - 159988</span></li><li><span>Propiedades, plantas y equipo de transito - 159992</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Intangibles - 16</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Credito Mercantil - 1605</span><ul><li><span>Formato a Estimado - 160505</span></li><li><span>Formado o estimado - 160505</span></li><li><span>Adquirido o Comprado - 160510</span></li><li><span>Adquirido o comprado - 160510</span></li><li><span>Ajustes por Inflacion - 160599</span></li><li><span>Ajustes por inflacion - 160599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Credito mercantil - 1605</span><ul><li><span>Formato a Estimado - 160505</span></li><li><span>Formado o estimado - 160505</span></li><li><span>Adquirido o Comprado - 160510</span></li><li><span>Adquirido o comprado - 160510</span></li><li><span>Ajustes por Inflacion - 160599</span></li><li><span>Ajustes por inflacion - 160599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Marcas - 1610</span><ul><li><span>Adquiridas - 161005</span></li><li><span>Adquiridas - 161005</span></li><li><span>Formadas - 161010</span></li><li><span>Formadas - 161010</span></li><li><span>Ajustes por Inflacion - 161099</span></li><li><span>Ajustes por inflacion - 161099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Marcas - 1610</span><ul><li><span>Adquiridas - 161005</span></li><li><span>Adquiridas - 161005</span></li><li><span>Formadas - 161010</span></li><li><span>Formadas - 161010</span></li><li><span>Ajustes por Inflacion - 161099</span></li><li><span>Ajustes por inflacion - 161099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Patentes - 1615</span><ul><li><span>Adquiridas - 161505</span></li><li><span>Adquiridas - 161505</span></li><li><span>Formadas - 161510</span></li><li><span>Formadas - 161510</span></li><li><span>Ajustes por Inflacion - 161599</span></li><li><span>Ajustes por inflacion - 161599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Patentes - 1615</span><ul><li><span>Adquiridas - 161505</span></li><li><span>Adquiridas - 161505</span></li><li><span>Formadas - 161510</span></li><li><span>Formadas - 161510</span></li><li><span>Ajustes por Inflacion - 161599</span></li><li><span>Ajustes por inflacion - 161599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Concesiones y franquicias - 1620</span><ul><li><span>Concesiones - 162005</span></li><li><span>Concesiones - 162005</span></li><li><span>Franquicias - 162010</span></li><li><span>Franquicias - 162010</span></li><li><span>Ajustes por Inflacion - 162099</span></li><li><span>Ajustes por inflacion - 162099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Concesiones y Franquicias - 1620</span><ul><li><span>Concesiones - 162005</span></li><li><span>Concesiones - 162005</span></li><li><span>Franquicias - 162010</span></li><li><span>Franquicias - 162010</span></li><li><span>Ajustes por Inflacion - 162099</span></li><li><span>Ajustes por inflacion - 162099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Drechos - 1625</span><ul><li><span>Derechos de Autor - 162505</span></li><li><span>Derechos de autor - 162505</span></li><li><span>Puesto de Bolsa - 162510</span></li><li><span>Puesto de bolsa - 162510</span></li><li><span>En fideicomiso - 162515</span></li><li><span>En fideicomisos inmobiliarios - 162515</span></li><li><span>en fideicomisos de garantia - 162520</span></li><li><span>En fideicomiso de garantia - 162520</span></li><li><span>En fideicomiso de administracion - 162525</span></li><li><span>De exhibicion-peliculas - 162530</span></li><li><span>En bienes recibidos en arrendamiento financie - 162535</span></li><li><span>Otros - 162595</span></li><li><span>Ajustes por inflacion - 162599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Derechos - 1625</span><ul><li><span>Derechos de Autor - 162505</span></li><li><span>Derechos de autor - 162505</span></li><li><span>Puesto de Bolsa - 162510</span></li><li><span>Puesto de bolsa - 162510</span></li><li><span>En fideicomiso - 162515</span></li><li><span>En fideicomisos inmobiliarios - 162515</span></li><li><span>en fideicomisos de garantia - 162520</span></li><li><span>En fideicomiso de garantia - 162520</span></li><li><span>En fideicomiso de administracion - 162525</span></li><li><span>De exhibicion-peliculas - 162530</span></li><li><span>En bienes recibidos en arrendamiento financie - 162535</span></li><li><span>Otros - 162595</span></li><li><span>Ajustes por inflacion - 162599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Know how - 1630</span><ul><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> know how - 1630</span><ul><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Licencias - 1635</span><ul><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Licencias - 1635</span><ul><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depreciacion y/o amortizacion acumulada - 1698</span><ul><li><span>Credito mercantil - 169805</span></li><li><span>Marcas - 169810</span></li><li><span>Patentes - 169815</span></li><li><span>Concesiones y franquicias - 169820</span></li><li><span>Derechos - 169830</span></li><li><span>Derechos - 169830</span></li><li><span>Know how - 169835</span></li><li><span>Know how - 169835</span></li><li><span>Licencias - 169840</span></li><li><span>Licencias - 169840</span></li><li><span>Ajustes por inflacion - 169899</span></li><li><span>Ajustes por inflacion - 169899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depreciacion y/o amortizacion acumulada - 1698</span><ul><li><span>Credito mercantil - 169805</span></li><li><span>Marcas - 169810</span></li><li><span>Patentes - 169815</span></li><li><span>Concesiones y franquicias - 169820</span></li><li><span>Derechos - 169830</span></li><li><span>Derechos - 169830</span></li><li><span>Know how - 169835</span></li><li><span>Know how - 169835</span></li><li><span>Licencias - 169840</span></li><li><span>Licencias - 169840</span></li><li><span>Ajustes por inflacion - 169899</span></li><li><span>Ajustes por inflacion - 169899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones - 1699</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones - 1699</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Intangibles - 16</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Credito Mercantil - 1605</span><ul><li><span>Formato a Estimado - 160505</span></li><li><span>Formado o estimado - 160505</span></li><li><span>Adquirido o Comprado - 160510</span></li><li><span>Adquirido o comprado - 160510</span></li><li><span>Ajustes por Inflacion - 160599</span></li><li><span>Ajustes por inflacion - 160599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Credito mercantil - 1605</span><ul><li><span>Formato a Estimado - 160505</span></li><li><span>Formado o estimado - 160505</span></li><li><span>Adquirido o Comprado - 160510</span></li><li><span>Adquirido o comprado - 160510</span></li><li><span>Ajustes por Inflacion - 160599</span></li><li><span>Ajustes por inflacion - 160599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Marcas - 1610</span><ul><li><span>Adquiridas - 161005</span></li><li><span>Adquiridas - 161005</span></li><li><span>Formadas - 161010</span></li><li><span>Formadas - 161010</span></li><li><span>Ajustes por Inflacion - 161099</span></li><li><span>Ajustes por inflacion - 161099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Marcas - 1610</span><ul><li><span>Adquiridas - 161005</span></li><li><span>Adquiridas - 161005</span></li><li><span>Formadas - 161010</span></li><li><span>Formadas - 161010</span></li><li><span>Ajustes por Inflacion - 161099</span></li><li><span>Ajustes por inflacion - 161099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Patentes - 1615</span><ul><li><span>Adquiridas - 161505</span></li><li><span>Adquiridas - 161505</span></li><li><span>Formadas - 161510</span></li><li><span>Formadas - 161510</span></li><li><span>Ajustes por Inflacion - 161599</span></li><li><span>Ajustes por inflacion - 161599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Patentes - 1615</span><ul><li><span>Adquiridas - 161505</span></li><li><span>Adquiridas - 161505</span></li><li><span>Formadas - 161510</span></li><li><span>Formadas - 161510</span></li><li><span>Ajustes por Inflacion - 161599</span></li><li><span>Ajustes por inflacion - 161599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Concesiones y franquicias - 1620</span><ul><li><span>Concesiones - 162005</span></li><li><span>Concesiones - 162005</span></li><li><span>Franquicias - 162010</span></li><li><span>Franquicias - 162010</span></li><li><span>Ajustes por Inflacion - 162099</span></li><li><span>Ajustes por inflacion - 162099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Concesiones y Franquicias - 1620</span><ul><li><span>Concesiones - 162005</span></li><li><span>Concesiones - 162005</span></li><li><span>Franquicias - 162010</span></li><li><span>Franquicias - 162010</span></li><li><span>Ajustes por Inflacion - 162099</span></li><li><span>Ajustes por inflacion - 162099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Drechos - 1625</span><ul><li><span>Derechos de Autor - 162505</span></li><li><span>Derechos de autor - 162505</span></li><li><span>Puesto de Bolsa - 162510</span></li><li><span>Puesto de bolsa - 162510</span></li><li><span>En fideicomiso - 162515</span></li><li><span>En fideicomisos inmobiliarios - 162515</span></li><li><span>en fideicomisos de garantia - 162520</span></li><li><span>En fideicomiso de garantia - 162520</span></li><li><span>En fideicomiso de administracion - 162525</span></li><li><span>De exhibicion-peliculas - 162530</span></li><li><span>En bienes recibidos en arrendamiento financie - 162535</span></li><li><span>Otros - 162595</span></li><li><span>Ajustes por inflacion - 162599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Derechos - 1625</span><ul><li><span>Derechos de Autor - 162505</span></li><li><span>Derechos de autor - 162505</span></li><li><span>Puesto de Bolsa - 162510</span></li><li><span>Puesto de bolsa - 162510</span></li><li><span>En fideicomiso - 162515</span></li><li><span>En fideicomisos inmobiliarios - 162515</span></li><li><span>en fideicomisos de garantia - 162520</span></li><li><span>En fideicomiso de garantia - 162520</span></li><li><span>En fideicomiso de administracion - 162525</span></li><li><span>De exhibicion-peliculas - 162530</span></li><li><span>En bienes recibidos en arrendamiento financie - 162535</span></li><li><span>Otros - 162595</span></li><li><span>Ajustes por inflacion - 162599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Know how - 1630</span><ul><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> know how - 1630</span><ul><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163099</span></li><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Licencias - 1635</span><ul><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Licencias - 1635</span><ul><li><span>Ajustes por inflacion - 163599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depreciacion y/o amortizacion acumulada - 1698</span><ul><li><span>Credito mercantil - 169805</span></li><li><span>Marcas - 169810</span></li><li><span>Patentes - 169815</span></li><li><span>Concesiones y franquicias - 169820</span></li><li><span>Derechos - 169830</span></li><li><span>Derechos - 169830</span></li><li><span>Know how - 169835</span></li><li><span>Know how - 169835</span></li><li><span>Licencias - 169840</span></li><li><span>Licencias - 169840</span></li><li><span>Ajustes por inflacion - 169899</span></li><li><span>Ajustes por inflacion - 169899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depreciacion y/o amortizacion acumulada - 1698</span><ul><li><span>Credito mercantil - 169805</span></li><li><span>Marcas - 169810</span></li><li><span>Patentes - 169815</span></li><li><span>Concesiones y franquicias - 169820</span></li><li><span>Derechos - 169830</span></li><li><span>Derechos - 169830</span></li><li><span>Know how - 169835</span></li><li><span>Know how - 169835</span></li><li><span>Licencias - 169840</span></li><li><span>Licencias - 169840</span></li><li><span>Ajustes por inflacion - 169899</span></li><li><span>Ajustes por inflacion - 169899</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones - 1699</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones - 1699</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Diferidos - 17</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Gastos pagados por anticipado - 1705</span><ul><li><span>Intereses - 170505</span></li><li><span>Honorarios - 170510</span></li><li><span>Comisiones - 170515</span></li><li><span>Seguros y fianzas - 170520</span></li><li><span>Arrendamientos - 170525</span></li><li><span>Bodegas - 170530</span></li><li><span>Mantenimiento equipos - 170535</span></li><li><span>Servicios - 170540</span></li><li><span>Suscripciones - 170545</span></li><li><span>Otros - 170595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cargos diferidos - 1710</span><ul><li><span>Organizacion y preoperativos - 171004</span></li><li><span>Remodelaciones - 171008</span></li><li><span>Estudios, investigacion y proyectos - 171012</span></li><li><span>Programas para computadores(software) - 171016</span></li><li><span>Utiles y papeleria - 171020</span></li><li><span>Mejoras a propiedades ajenas - 171024</span></li><li><span>Contribuciones y afiliaciones - 171028</span></li><li><span>Entrenamiento de personal - 171032</span></li><li><span>Ferias y explosiciones - 171036</span></li><li><span>Licencias - 171040</span></li><li><span>Publicidad, propaganda y promocion - 171044</span></li><li><span>Elementos de aseo y cafeteria - 171048</span></li><li><span>Moldes y troqueles - 171052</span></li><li><span>Instrumental quirurjico - 171056</span></li><li><span>Dotacion y suministro a trabajadores - 171060</span></li><li><span>Elementos de roperia - 171064</span></li><li><span>loza y cristaleria - 171068</span></li><li><span>Plateria - 171069</span></li><li><span>Cubierteria - 171070</span></li><li><span>Impuesto de renta deferido? debitos? por dife - 171076</span></li><li><span>Concursos y licitaciones - 171080</span></li><li><span>Otros - 171095</span></li><li><span>Ajustes por inflacion - 171099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Costos de explotacion por amortizar - 1715</span><ul><li><span>Pozos secos - 171505</span></li><li><span>Pozos no comerciales - 171510</span></li><li><span>Otros costos de explotacion - 171515</span></li><li><span>Ajustes por inflacion - 171599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Costos de exploracion y desarrollo - 1720</span><ul><li><span>Perforacion y explotacion - 172005</span></li><li><span>Perforacion campos de desarrollo - 172010</span></li><li><span>Facilidades de produccion - 172015</span></li><li><span>Servicio a pozos - 172020</span></li><li><span>Ajustes por inflacion - 172099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cargos por correcion monetaria diferida - 1730</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Amortizacion acumulada - 1798</span><ul><li><span>Costos de exploracion por amortizar - 179805</span></li><li><span>Costos de explotacion y desarrollo - 179810</span></li><li><span>Ajustes por inflacion - 179899</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Diferidos - 17</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Gastos pagados por anticipado - 1705</span><ul><li><span>Intereses - 170505</span></li><li><span>Honorarios - 170510</span></li><li><span>Comisiones - 170515</span></li><li><span>Seguros y fianzas - 170520</span></li><li><span>Arrendamientos - 170525</span></li><li><span>Bodegas - 170530</span></li><li><span>Mantenimiento equipos - 170535</span></li><li><span>Servicios - 170540</span></li><li><span>Suscripciones - 170545</span></li><li><span>Otros - 170595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cargos diferidos - 1710</span><ul><li><span>Organizacion y preoperativos - 171004</span></li><li><span>Remodelaciones - 171008</span></li><li><span>Estudios, investigacion y proyectos - 171012</span></li><li><span>Programas para computadores(software) - 171016</span></li><li><span>Utiles y papeleria - 171020</span></li><li><span>Mejoras a propiedades ajenas - 171024</span></li><li><span>Contribuciones y afiliaciones - 171028</span></li><li><span>Entrenamiento de personal - 171032</span></li><li><span>Ferias y explosiciones - 171036</span></li><li><span>Licencias - 171040</span></li><li><span>Publicidad, propaganda y promocion - 171044</span></li><li><span>Elementos de aseo y cafeteria - 171048</span></li><li><span>Moldes y troqueles - 171052</span></li><li><span>Instrumental quirurjico - 171056</span></li><li><span>Dotacion y suministro a trabajadores - 171060</span></li><li><span>Elementos de roperia - 171064</span></li><li><span>loza y cristaleria - 171068</span></li><li><span>Plateria - 171069</span></li><li><span>Cubierteria - 171070</span></li><li><span>Impuesto de renta deferido? debitos? por dife - 171076</span></li><li><span>Concursos y licitaciones - 171080</span></li><li><span>Otros - 171095</span></li><li><span>Ajustes por inflacion - 171099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Costos de explotacion por amortizar - 1715</span><ul><li><span>Pozos secos - 171505</span></li><li><span>Pozos no comerciales - 171510</span></li><li><span>Otros costos de explotacion - 171515</span></li><li><span>Ajustes por inflacion - 171599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Costos de exploracion y desarrollo - 1720</span><ul><li><span>Perforacion y explotacion - 172005</span></li><li><span>Perforacion campos de desarrollo - 172010</span></li><li><span>Facilidades de produccion - 172015</span></li><li><span>Servicio a pozos - 172020</span></li><li><span>Ajustes por inflacion - 172099</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cargos por correcion monetaria diferida - 1730</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Amortizacion acumulada - 1798</span><ul><li><span>Costos de exploracion por amortizar - 179805</span></li><li><span>Costos de explotacion y desarrollo - 179810</span></li><li><span>Ajustes por inflacion - 179899</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Otros Activos - 18</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Biienes de arte y cultura - 1805</span><ul><li><span>Obras de Arte - 180505</span></li><li><span>Bibliotecas - 180510</span></li><li><span>Otros - 180595</span></li><li><span>Ajustes por inflacion - 180599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Diversos - 1895</span><ul><li><span>Maquinas porteadoras - 189505</span></li><li><span>Bienes entregados en comodato - 189510</span></li><li><span>Amortizacion acumulada de bienes entregados e - 189515</span></li><li><span>Bienes recibidos en pago - 189520</span></li><li><span>Derechos sucesorales - 189525</span></li><li><span>Estampillas - 189530</span></li><li><span>Otros - 189595</span></li><li><span>Ajustes por inflacion - 189599</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones - 1899</span><ul><li><span>Bienes de arte y cultura - 189905</span></li><li><span>Diversos - 189995</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Valorizaciones - 19</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De inversiones - 1905</span><ul><li><span>Acciones - 190505</span></li><li><span>Cuotas o partes de interes social - 190510</span></li><li><span>Derechos fiduciarios - 190515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De propiedades, planta y equipo - 1910</span><ul><li><span>Terrenos - 191004</span></li><li><span>Materiales proyectos petroleros - 191006</span></li><li><span>Construcciones y edificaciones - 191008</span></li><li><span>Maquinarias y equipo - 191012</span></li><li><span>Equipo de oficina - 191016</span></li><li><span>Equipo de computacion y comunicacion - 191020</span></li><li><span>Equipo medico-cientifico - 191024</span></li><li><span>Equipo de hoteles y restaurantes - 191028</span></li><li><span>Flota y equipo de transporte - 191032</span></li><li><span>Flota y equipo fluvial y/o maritimo - 191036</span></li><li><span>Flota y equipo aereo - 191040</span></li><li><span>Flota equipo ferreo - 191044</span></li><li><span>Acueductos, plantas y redes - 191048</span></li><li><span>Armamento de vigilancia - 191052</span></li><li><span>Envases y empaques - 191056</span></li><li><span>Plantaciones agricolas y forestales - 191060</span></li><li><span>Vias de comunicacion - 191064</span></li><li><span>Minas y canteras - 191068</span></li><li><span>Pozos artesanios - 191072</span></li><li><span>Yacimientos - 191076</span></li><li><span>Semovientes - 191080</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De otros activos - 1915</span><ul><li><span>Bienes de arte y cultura - 191505</span></li><li><span>Bienes entregados en comodato - 191510</span></li><li><span>Bienes recibidos en pago - 191515</span></li><li><span>Inventario Semovientes - 191520</span></li></ul></li></ul></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Pasivo</span><ul><li><span><i class="fa fa-lg fa-plus-circle"></i>Obligaciones Financieras - 21</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bancos Nacionales - 2105</span><ul><li><span>Sobregiros - 210505</span></li><li><span>Pagarés - 210510</span></li><li><span>Cartas de Crédito - 210515</span></li><li><span>Aceptaciones Bancarias - 210520</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bancos del Exterior - 2110</span><ul><li><span>Sobregiros - 211005</span></li><li><span>Pagarés - 211010</span></li><li><span>Cartas de Crédito - 211015</span></li><li><span>Aceptaciones Financieras - 211020</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Corporaciones Financieras - 2115</span><ul><li><span>Pagarés - 211505</span></li><li><span>Aceptaciones Financieras - 211510</span></li><li><span>Cartas de Crédito - 211515</span></li><li><span>Contratos de Arrendamiento Financiero (Leasin - 211520</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Compañías de Financiamiento Comercial - 2120</span><ul><li><span>Pagarés - 212005</span></li><li><span>Aceptaciones Financieras - 212010</span></li><li><span>Contratos de Arrendamiento Financiero (Leasin - 212020</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Corporaciones de Ahorro y Vivienda - 2125</span><ul><li><span>Sobregiros - 212505</span></li><li><span>Pagarés - 212510</span></li><li><span>Hipotecarias - 212515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Entidades Financieras del Exterior - 2130</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Compromisos de Recompra de Inversiones Negoci - 2135</span><ul><li><span>Acciones - 213505</span></li><li><span>Cuotas o Partes de Interés Social - 213510</span></li><li><span>Bonos - 213515</span></li><li><span>Cédulas - 213520</span></li><li><span>Certificados - 213525</span></li><li><span>Papeles Comerciales - 213530</span></li><li><span>Títulos - 213535</span></li><li><span>Aceptaciones Bancarias o Financieras - 213540</span></li><li><span>Otros - 213595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Compromisos de Recompra de Cartera Negociada - 2140</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Obligaciones Gubernamentales - 2145</span><ul><li><span>Gobierno Nacional - 214505</span></li><li><span>Entidades Oficiales - 214510</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Otras Obligaciones - 2195</span><ul><li><span>Particulares - 219505</span></li><li><span>Compañías Vinculadas - 219510</span></li><li><span>Casa Matriz - 219515</span></li><li><span>Socios o Accionistas - 219520</span></li><li><span>Fondos y Cooperativas - 219525</span></li><li><span>Directores - 219530</span></li><li><span>Otras - 219595</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Proveedores - 22</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Nacionales - 2205</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Del Exterior - 2210</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuentas Corrientes Comerciales - 2215</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Casa Matriz - 2220</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Compañías Vinculadas - 2225</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Cuentas por Pagar - 23</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuentas Corrientes Comerciales - 2305</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> A Casa Matriz - 2310</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> A Compañias Vinculadas - 2315</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> A Contratistas - 2320</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Órdenes de Compra por Utilizar - 2330</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Costos y Gastos por Pagar - 2335</span><ul><li><span>Gastos Financieros - 233505</span></li><li><span>Gastos Legales - 233510</span></li><li><span>Libros, Suscripciones, Periódicos y Revistas - 233515</span></li><li><span>Comisiones - 233520</span></li><li><span>Honorarios - 233525</span></li><li><span>Servicios Técnicos - 233530</span></li><li><span>Servicios de Mantenimiento - 233535</span></li><li><span>Arrendamientos - 233540</span></li><li><span>Transportes, Fletes y Acarreos - 233545</span></li><li><span>Servicios Públicos - 233550</span></li><li><span>Seguros - 233555</span></li><li><span>Gastos de Viaje - 233560</span></li><li><span>Gastos de Representación y Relaciones Pública - 233565</span></li><li><span>Servicios Aduaneros - 233570</span></li><li><span>Otros - 233595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Instalamentos por Pagar - 2340</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Acreedores Oficiales - 2345</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Regalías por Pagar - 2350</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Deudas con Accionistas o Socios - 2355</span><ul><li><span>Accionistas - 235505</span></li><li><span>Socios - 235510</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Deudas con Directores - 2357</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Dividendos o Participaciones por Pagar - 2360</span><ul><li><span>Dividendos - 236005</span></li><li><span>Participaciones - 236010</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Retención en la Fuente - 2365</span><ul><li><span>Salarios y Pagos Laborales - 236505</span></li><li><span>Dividendos y/o Participaciones - 236510</span></li><li><span>Honorarios - 236515</span></li><li><span>Comisiones - 236520</span></li><li><span>Servicios - 236525</span></li><li><span>Arrendamientos - 236530</span></li><li><span>Rendimientos Financieros - 236535</span></li><li><span>Compras - 236540</span></li><li><span>Loterías, Rifas, Apuestas y Similares - 236545</span></li><li><span>Por Pagos al Exterior - 236550</span></li><li><span>Por Ingresos Obtenidos en el Exterior - 236555</span></li><li><span>Enajenación Propiedades Planta y Equipo, Pers - 236560</span></li><li><span>Por Impuesto de Timbre - 236565</span></li><li><span>Otras Retenciones y Patrimonio - 236570</span></li><li><span>Autorretenciones - 236575</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Impuesto a las Ventas Retenido - 2367</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Impuesto de Industria y Comercio Retenido - 2368</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Retenciones y Aportes de Nómina - 2370</span><ul><li><span>Aportes a Entidades Promotoras de Salud, EPS - 237005</span></li><li><span>Aportes a Administradoras de Riesgos Profesio - 237006</span></li><li><span>Aportes ICBF, SENA y Cajas de Compensación - 237010</span></li><li><span>Aportes FIC - 237015</span></li><li><span>Embargos Judiciales - 237025</span></li><li><span>Libranzas - 237030</span></li><li><span>Sindicatos - 237035</span></li><li><span>Cooperativas - 237040</span></li><li><span>Fondos - 237045</span></li><li><span>Otros - 237095</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuotas por Devolver - 2375</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Acreedores Varios - 2380</span><ul><li><span>Depositarios - 238005</span></li><li><span>Comisionistas de Bolsas - 238010</span></li><li><span>Sociedad Administradora-Fondos Inversión - 238015</span></li><li><span>Reintegros por Pagar - 238020</span></li><li><span>Fondo de Perseverancia - 238025</span></li><li><span>Fondos de Cesantías y/o pensiones - 238030</span></li><li><span>Donaciones Asignadas por Pagar - 238035</span></li><li><span>Otros - 238095</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Impuestos, Gravámenes y Tasas - 24</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Renta y Complementarios - 2404</span><ul><li><span>Vigencia Fiscal Corriente - 240405</span></li><li><span>Vigencias Fiscales Anteriores - 240410</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Impuesto Sobre las Ventas por Pagar - 2408</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Industria y Comercio - 2412</span><ul><li><span>Vigencia Fiscal Corriente - 241205</span></li><li><span>Vigencias Fiscales Anteriores - 241210</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> A la Propiedad Raiz - 2416</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Derechos Sobre Instrumentos Públicos - 2420</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Valorización - 2424</span><ul><li><span>Vigencia Fiscal Corriente - 242405</span></li><li><span>Vigencias Fiscales Anteriores - 242410</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Turismo - 2428</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Tasa por Utilización de Puertos - 2432</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Vehículos - 2436</span><ul><li><span>Vigencia Fiscal Corriente - 243605</span></li><li><span>Vigencias Fiscales Anteriores - 243610</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Espectáculos Públicos - 2440</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Hidrocarburos y Minas - 2444</span><ul><li><span>De Hidrocarburos - 244405</span></li><li><span>De Minas - 244410</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Regalías e impuestos a la Pequeña Minería - 2448</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> A las Exportaciones Cafeteras - 2452</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> A las Importaciones - 2456</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuotas de Fomento - 2460</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Licores, Cervezas y Cigarrillos - 2464</span><ul><li><span>De Licores - 246405</span></li><li><span>De Cervezas - 246410</span></li><li><span>De Cigarrillos - 246415</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Al Sacrificio de Ganado - 2468</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Al Azar y Juegos - 2472</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Gravámenes y Regalías por Utilización de Suel - 2476</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Otros - 2495</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Obligaciones Laborales - 25</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Salarios por Pagar - 2505</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cesantías Consolidadas - 2510</span><ul><li><span>Ley Laboral Anterior - 251005</span></li><li><span>Ley 50 de 1990 y Normas Posteriores - 251010</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Intereses sobre Cesantías - 2515</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Prima de Servicios - 2520</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Vacaciones Consolidadas - 2525</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Prestaciones Extralegales - 2530</span><ul><li><span>Primas - 253005</span></li><li><span>Auxilios - 253010</span></li><li><span>Dotación y Suministro a Trabajadores - 253015</span></li><li><span>Bonificaciones - 253020</span></li><li><span>Seguros - 253025</span></li><li><span>Otras - 253095</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Pensiones por Pagar - 2532</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuotas Partes Pensiones de Jubilación - 2535</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Indemnizaciones Laborales - 2540</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Pasivos Estimados y Provisiones - 26</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Costos y Gastos - 2605</span><ul><li><span>Intereses - 260505</span></li><li><span>Comisiones - 260510</span></li><li><span>Honorarios - 260515</span></li><li><span>Servicios Técnicos - 260520</span></li><li><span>Transportes, Fletes y Acarreos - 260525</span></li><li><span>Gastos de Viaje - 260530</span></li><li><span>Servicios Públicos - 260535</span></li><li><span>Regalías - 260540</span></li><li><span>Garantías - 260545</span></li><li><span>Materiales y Repuestos - 260550</span></li><li><span>Otros - 260595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Obligaciones Laborales - 2610</span><ul><li><span>Cesantías - 261005</span></li><li><span>Intereses Sobre Cesantías - 261010</span></li><li><span>Vacaciones - 261015</span></li><li><span>Prima de Servicios - 261020</span></li><li><span>Prestaciones Extralegales - 261025</span></li><li><span>Viáticos - 261030</span></li><li><span>Otras - 261095</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Obligaciones Fiscales - 2615</span><ul><li><span>De Renta y Complementarios - 261505</span></li><li><span>De Industria y Comercio - 261510</span></li><li><span>Tasa por Utilización de Puertos - 261515</span></li><li><span>De Vehículos - 261520</span></li><li><span>De Hidrocarburos y Minas - 261525</span></li><li><span>Otros - 261595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Pensiones de Jubilación - 2620</span><ul><li><span>Cálculo Actuarial Pensiones de Jubilación - 262005</span></li><li><span>Pensiones de Jubilación por Amortizar (DB) - 262010</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Obras de Urbanismo - 2625</span><ul><li><span>Acueducto y Alcantarillado - 262505</span></li><li><span>Energía Eléctrica - 262510</span></li><li><span>Teléfonos - 262515</span></li><li><span>Otros - 262595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Mantenimiento y Reparaciones - 2630</span><ul><li><span>Terrenos - 263005</span></li><li><span>Construcciones y Edificaciones - 263010</span></li><li><span>Maquinaria y Equipo - 263015</span></li><li><span>Equipo de Oficina - 263020</span></li><li><span>Equipo de Computación y Comunicación - 263025</span></li><li><span>Equipo Médico-Científico - 263030</span></li><li><span>Equipo de Hoteles y Restaurantes - 263035</span></li><li><span>Flota y Equipo de Transporte - 263040</span></li><li><span>Flota y Equipo Fluvial y/o Marítimo - 263045</span></li><li><span>Flota y Equipo Aéreo - 263050</span></li><li><span>Flota y Equipo Férreo - 263055</span></li><li><span>Acueductos, Plantas y Redes - 263060</span></li><li><span>Armamento de Vigilancia - 263065</span></li><li><span>Envases y Empaques - 263070</span></li><li><span>Plantaciones Agrícolas y Forestales - 263075</span></li><li><span>Vías de Comunicación - 263080</span></li><li><span>Pozos Artesianos - 263085</span></li><li><span>Otros - 263095</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Contingencias - 2635</span><ul><li><span>Multas y Sanciones Autoridades Administrativa - 263505</span></li><li><span>Intereses por Multas y Sanciones - 263510</span></li><li><span>Reclamos - 263515</span></li><li><span>Laborales - 263520</span></li><li><span>Civiles - 263525</span></li><li><span>Penales - 263530</span></li><li><span>Administrativos - 263535</span></li><li><span>Comerciales - 263540</span></li><li><span>Otras - 263595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Para Obligaciones de Garantías - 2640</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Provisiones Diversas - 2695</span><ul><li><span>Para Beneficencia - 269505</span></li><li><span>Para Comunicaciones - 269510</span></li><li><span>Para Pérdida en Transporte - 269515</span></li><li><span>Para Operación - 269520</span></li><li><span>Para Protección de Bienes Agotablers - 269525</span></li><li><span>Para Ajustes en Redención de Unidades - 269530</span></li><li><span>Autoseguro - 269535</span></li><li><span>Planes y Programas de Reforestación y Electri - 269540</span></li><li><span>Otras - 269595</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Diferidos - 27</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Ingresos Recibidos por Anticipado - 2705</span><ul><li><span>Intereses - 270505</span></li><li><span>Comisiones - 270510</span></li><li><span>Arrendamientos - 270515</span></li><li><span>Honorarios - 270520</span></li><li><span>Servicios Técnicos - 270525</span></li><li><span>De Suscriptores - 270530</span></li><li><span>Transporte, Fletes y Acarreos - 270535</span></li><li><span>Mercancía en Tránsito ya Vendida - 270540</span></li><li><span>Matrículas y Pensiones - 270545</span></li><li><span>Cuotas de Administración - 270550</span></li><li><span>Otros - 270595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Abonos Diferidos - 2710</span><ul><li><span>Reajuste del Sistema - 271005</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Utilidad Diferida en Ventas a Plazos - 2715</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Crédito por Corrección Monetaria Diferida - 2720</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Impuestos Diferidos - 2725</span><ul><li><span>Por Depreciación Flexible - 272505</span></li><li><span>Diversos - 272595</span></li><li><span>Ajustes por Inflación - 272599</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Otros Pasivos - 28</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Anticipos y Avances Recibidos - 2805</span><ul><li><span>De Clientes - 280505</span></li><li><span>Sobre Contratos - 280510</span></li><li><span>Para Obras en Proceso - 280515</span></li><li><span>Otros - 280595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Depósitos Recibidos - 2810</span><ul><li><span>Para Futura Suscripción de Acciones - 281005</span></li><li><span>Para Futuro Pago de Cuotas o Derechos Sociale - 281010</span></li><li><span>Para Garantía en la Prestación de Servicios - 281015</span></li><li><span>Para Garantía de Contratos - 281020</span></li><li><span>De Licitaciones - 281025</span></li><li><span>De Manejo de Bienes - 281030</span></li><li><span>Fondo de Reserva - 281035</span></li><li><span>Otros - 281095</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Ingresos Recibidos para Terceros - 2815</span><ul><li><span>Valores Recibidos para Terceros - 281505</span></li><li><span>Venta por Cuenta de Terceros - 281510</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Cuentas de Operación Conjunta - 2820</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Retenciones a Terceros sobre Contratos - 2825</span><ul><li><span>Cumplimiento de Obligaciones Laborales - 282505</span></li><li><span>Para Estabilidad de Obra - 282510</span></li><li><span>Garantía de Cumplimiento de Contratos - 282515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Embargos Judiciales - 2830</span><ul><li><span>Indemnizaciones - 283005</span></li><li><span>Depósitos Judiciales - 283010</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Acreedores del Sistema - 2835</span><ul><li><span>Coutas Netas - 283505</span></li><li><span>Grupos en Formación - 283510</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Coutas en Participación - 2840</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Diversos - 2895</span><ul><li><span>Préstamos de Productos - 289505</span></li><li><span>Reembolso de Costos Exploratorios - 289510</span></li><li><span>Programa de Extensión Agropecuaria - 289515</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Bonos y Papeles Comerciales - 29</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bonos de Circulación - 2905</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bonos Obligatoriamente Convertibles en Accion - 2910</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Papeles Comerciales - 2915</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Bonos Pensionales - 2920</span><ul><li><span>Valor Bonos Pensionales - 292005</span></li><li><span>Bonos Pensionales por Amortizar (BD) - 292010</span></li><li><span>Intereses Causados sobre Bonos Pensionales - 292015</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Títulos Pensionales - 2925</span><ul><li><span>Valor Títulos Pensionales - 292505</span></li><li><span>Títulos Pensionales por Amortizar (BD) - 292510</span></li><li><span>Intereses Causados sobre Títulos Pensionales - 292515</span></li></ul></li></ul></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Patrimonio</span><ul><li><span><i class="fa fa-lg fa-plus-circle"></i>Capital Social - 31</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Capital Suscrito Pagado - 3105</span><ul><li><span>Capital Autorizado - 310505</span></li><li><span>Capital por Suscribir (DB) - 310510</span></li><li><span>Capital Suscrito por Cobrar (DB) - 310515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Aportes Sociales - 3115</span><ul><li><span>Cuotas o Partes de Interés Social - 311505</span></li><li><span>Aportes de Socios-Fondo Mutuo de Inversión - 311510</span></li><li><span>Contribución de la Empresa-Fondo Mutuo de Inv - 311515</span></li><li><span>Suscripciones del Público - 311520</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Capital Asignado - 3120</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Inversión Suplementaria al Capital Asignado - 3125</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Capital de Personas Naturales - 3130</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Aportes del Estado - 3135</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Fondo Social - 3140</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Superávit de Capital - 32</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Prima en Colocación de Acciones, Cuotas o Par - 3205</span><ul><li><span>Prima en Colocación de Acciones - 320505</span></li><li><span>Prima en Colocación de Acciones por Cobrar (D - 320510</span></li><li><span>Prima en Colocación de Cuotas o Partes de Int - 320515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Donaciones - 3210</span><ul><li><span>En Dinero - 321005</span></li><li><span>En Valores Mobiliarios - 321010</span></li><li><span>En Bienes Muebles - 321015</span></li><li><span>En Bienes Inmuebles - 321020</span></li><li><span>En Intangibles - 321025</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Crédito Mercantil - 3215</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Know How - 3220</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Superávit Método de Participación - 3225</span><ul><li><span>De Acciones - 322505</span></li><li><span>De Cuotas o Partes de Interés Social - 322510</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Reservas - 33</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Reservas Obligatorias - 3305</span><ul><li><span>Reserva Legal - 330505</span></li><li><span>Reserva por Disposiciones Fiscales - 330510</span></li><li><span>Reserva para Adquisición de Acciones - 330515</span></li><li><span>Acciones Propias Readquiridas (DB) - 330516</span></li><li><span>Reserva para la Readquisición de Cuotas o Par - 330517</span></li><li><span>Cuotas o Partes de Interés Social Propias Rea - 330518</span></li><li><span>Reserva para Extensión Agropecuaria - 330520</span></li><li><span>Reserva Ley Séptima de 1990 - 330525</span></li><li><span>Reserva para Disposición de Semovientes - 330530</span></li><li><span>Reserva Ley Octaba de 1980 - 330535</span></li><li><span>Otras - 330595</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Reservas Estatutarias - 3310</span><ul><li><span>Para Futuras Capitalizaciones - 331005</span></li><li><span>Para Reposición de Activos - 331010</span></li><li><span>Para Futuros Ensanches - 331015</span></li><li><span>Otras - 331095</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Reservas Ocasionales - 3315</span><ul><li><span>Para Beneficencia y Civismo - 331505</span></li><li><span>Para Futuras Capitalizaciones - 331510</span></li><li><span>Para Futuros Ensanches - 331515</span></li><li><span>Para Adquisición o Reposición de Propiedades, - 331520</span></li><li><span>Para Investigaciones y Desarrollo - 331525</span></li><li><span>Para Fomento Económico - 331530</span></li><li><span>Para Capital de Trabajo - 331535</span></li><li><span>Para Estabilización de Rendimientos - 331540</span></li><li><span>A Disposición del Máximo Órgano Social - 331545</span></li><li><span>Otras - 331595</span></li></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Revalorización del Patrimonio - 34</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Ajustes por Inflación - 3405</span><ul><li><span>De Capital Social - 340505</span></li><li><span>De Superávit de Capital - 340510</span></li><li><span>De Reservas - 340515</span></li><li><span>De Resultados de Ejercicios Anteriores - 340520</span></li><li><span>De Activos en Período Improductivo - 340525</span></li><li><span>De Saneamiento Fiscal - 340530</span></li><li><span>De Ajustes Decreto 3019 de 1989 - 340535</span></li><li><span>De Dividendos y Participaciones Decretadas en - 340540</span></li><li><span>Superávit Método de Participación - 340545</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Saneamiento Fiscal - 3410</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Ajustes por Inflación Decreto 3019 de 1989 - 3415</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Dividendos o Participaciones Decretados en Ac - 35</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Dividendos Decretados en Acciones - 3505</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Participaciones Decretadas en Cuotas o Partes - 3510</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Resultados del Ejercicio - 36</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Utilidad del Ejercicio - 3605</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Pérdida del Ejercicio - 3610</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Resultados de Ejercicios Anteriores - 37</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Utilidades Acumuladas - 3705</span><ul></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> Pérdidas Acumuladas - 3710</span><ul></ul></li></ul></li><li><span><i class="fa fa-lg fa-plus-circle"></i>Superávit por Valorizaciones - 38</span><ul><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Inversiones - 3805</span><ul><li><span>Acciones - 380505</span></li><li><span>Cuotas o Partes de Interés Social - 380510</span></li><li><span>Derechos Fiduciarios - 380515</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Propiedad, Planta y Equipo - 3810</span><ul><li><span>Terrenos - 381004</span></li><li><span>Materiales Proyectos Petroleros - 381006</span></li><li><span>Construcciones y Edificaciones - 381008</span></li><li><span>Maquinaria y Equipo - 381012</span></li><li><span>Equipo de Oficina - 381016</span></li><li><span>Equipo de Computación y Comunicación - 381020</span></li><li><span>Equipo Médico-Científico - 381024</span></li><li><span>Equipo de Hoteles y Restaurantes - 381028</span></li><li><span>Flota de Equipo y Transporte - 381032</span></li><li><span>Flota y Equipo Fluvial y/o Marítimo - 381036</span></li><li><span>Flota y Equipo Aéreo - 381040</span></li><li><span>Flota y Equipo Férreo - 381044</span></li><li><span>Acueductos, Plantas y Redes - 381048</span></li><li><span>Armamento de Vigilancia - 381052</span></li><li><span>Envases y Empaques - 381056</span></li><li><span>Plantaciones Agrícolas y Forestales - 381060</span></li><li><span>Vías de Comunicación - 381064</span></li><li><span>Minas y Canteras - 381068</span></li><li><span>Pozos Artesianos - 381072</span></li><li><span>Yacimientos - 381076</span></li><li><span>Semovientes - 381080</span></li></ul></li><li style="display:none"><span><i class="fa fa-lg fa-plus-circle"></i> De Otros Activos - 3895</span><ul><li><span>Bienes de Arte y Cultura - 389505</span></li><li><span>Bienes Entregados en Comodato - 389510</span></li><li><span>Bienes Recibidos en Pago - 389515</span></li><li><span>Inventario de Semovientes - 389520</span></li></ul></li></ul></li></ul></li></ul></li></ul>
+							
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+		</article>
+		<!-- WIDGET END -->
+
+	</div>
+
+	<!-- end row -->
+
+	<!-- row -->
+
+	<div class="row">
+
+	</div>
+
+	<!-- end row -->
+
+</section>
+<!-- end widget grid -->
+
+<script type="text/javascript">
+
+	
+</script>
+
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#ajax/inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/profile.html" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices: you can disable this in app.js
+		<script src="js/plugin/fastclick/fastclick.js"></script> -->
+
+		<!--[if IE 7]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+                <script src="js/plugin/cookie/jquery.cookie.js"></script>
+		<script src="js/demo.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.js"></script>
+		
+		<script src="js/plugin/bootstraptree/bootstrap-tree.min.js"></script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-43548732-3']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+
+	</body>
+
+</html>

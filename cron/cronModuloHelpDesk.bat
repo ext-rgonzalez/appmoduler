@@ -1,0 +1,1 @@
+C:\wamp\bin\php\php5.5.12\php-cgi.exe -f C:\wamp\www\appmoduler\modules\helpdesk\controller\helpdeskJsonController.php -- dTabla=cron cCase=cronHelpDesk

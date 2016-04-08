@@ -1,0 +1,39 @@
+<form action="?app={FORM_CONTROLLER}&met={FORM_MET}&arg={FORM_ARG}" method="POST" id="loginForm" class="smart-form client-form">
+	<header>
+		Iniciar Sesion
+	</header>
+	<fieldset>
+		<section>
+			<label class="label">Usuario:</label>
+			<label class="input"> <i class="icon-append fa fa-user"></i>
+				<input id="username" type="text" name="username" class="form-control" value="" placeholder="Ingrese su Usuario ..." required>
+				<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Porfavor ingrese su usuario </b>
+			</label>
+		</section>
+			
+		<section>
+			<label class="label">Contraseña:</label>
+			<label class="input"> <i class="icon-append fa fa-lock"></i>
+				<input id="password" type="password" name="password" class="form-control" value="" required>
+				<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Porfavor ingrese su contrase&ntilde;a </b>
+			</label>
+		</section>
+		
+		<section>
+			<label class="checkbox">
+				<input type="checkbox" name="remember" checked="">
+				<i></i>Recordame
+			</label>
+		</section>
+                <div class="note">
+                    <a href="{NOM_LINK_RECOVER}">Ha olvidado su Contraseña?</a>
+                </div>
+	</fieldset>
+	<footer>
+		<button type="submit" class="btn btn-primary">
+			Iniciar Sesion
+		</button>
+	</footer>
+    
+</form>
+<div id="err" data="{ERR}" data_msj="{MSJ}"></div>

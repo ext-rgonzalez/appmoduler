@@ -1,0 +1,4 @@
+drop schema appmoduler;
+create schema appmoduler;
+SET SQL_SAFE_UPDATES=0;
+set Global log_bin_trust_function_creators=1;

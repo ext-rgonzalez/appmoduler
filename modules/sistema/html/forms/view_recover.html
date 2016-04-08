@@ -1,0 +1,33 @@
+<form action="?app={FORM_CONTROLLER}&met={FORM_MET}" method="POST" id="loginForm" class="smart-form client-form">
+    <header>
+        Recuperar Contrase&ntilde;a
+    </header>
+    <fieldset>
+        <section>
+            <label class="label">Digite su direccion de Email</label>
+            <label class="input"> <i class="icon-append fa fa-envelope"></i>
+                <input type="email" name="email_usuario" required>
+                <b class="tooltip tooltip-top-right"><i class="fa fa-envelope txt-color-teal"></i> Por favor digite su email para recuperar el contraseña</b></label>
+        </section>
+        <section>
+            <span class="timeline-seperator text-center text-primary"> <span class="font-sm">Y</span> 
+        </section>
+        <section>
+            <label class="label">Digite su Nombre de Usuario</label>
+            <label class="input"> <i class="icon-append fa fa-user"></i>
+                <input type="text" name="usuario_usuario" required>
+                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>Por favor digite su Nombre de Usuario para recuperar el password</b> </label>
+        </section>
+        <div class="note">
+            <a href="{NOM_LINK_INICIO}">Regresar!</a>
+        </div>
+    </fieldset>
+    <footer>
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-refresh"></i> Recuperar Contraseña
+        </button>
+    </footer>
+
+
+</form>
+<div id="err" data="{ERR}" data_msj="{MSJ}"></div>

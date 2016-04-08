@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sig="sig">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sig:wsGeoreferenciar>
+         <!--Optional:-->
+         <sig:municipio>68001000</sig:municipio>
+         <!--Optional:-->
+         <sig:direccion>cra 28 cl 47</sig:direccion>
+      </sig:wsGeoreferenciar>
+   </soapenv:Body>
+</soapenv:Envelope>

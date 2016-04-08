@@ -1,0 +1,25 @@
+<form class="form-horizontal" action="{SET_LOGIN}" method="POST" id="loginForm" role="form" >
+	<div class="form-group">
+		<label class="col-lg-12 control-label" for="username">Usuario:</label>
+		<div class="col-lg-12">
+			<input id="username" type="text" name="username" class="form-control" value="" placeholder="Ingrese su Usuario ..." required>
+			<span class="icon16 icomoon-icon-user right gray marginR10"></span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-lg-12 control-label" for="password">Contraseña:</label>
+		<div class="col-lg-12">
+			<input id="password" type="password" name="password" value="" class="form-control" required>
+			<span class="icon16 icomoon-icon-lock right gray marginR10"></span>
+			<span class="forgot help-block"><a href="#">Olvido su password?</a></span>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-12 clearfix form-actions">
+			<div class="checkbox left">
+				<label><input type="checkbox" id="keepLoged" value="Value" class="styled" name="logged" /> Recordarme</label>
+			</div>
+			<button type="submit" class="btn btn-info right" name='login' id="loginBtn" data="login"><span class="icon16 icomoon-icon-enter white"></span> Validar</button>
+		</div>
+	</div>
+</form>

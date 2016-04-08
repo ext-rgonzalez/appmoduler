@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title> {TITLE} </title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        {ARCHIVOSCSS}
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+        <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+        <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+    </head>
+    <body clas="">
+        <header id="header">
+            <div id="logo-group">
+                <span id="logo"><img src="{LogoEmpresa}" alt="{NomEmpresa}" width="10"></span>
+                <span id="activity" class="activity-dropdown"> <i class="fa fa-bell-o"></i> <b class="badge"> ? </b> </span>
+                <div class="ajax-dropdown">
+                    
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <label class="btn btn-default" id="btoAccion" data="tab-notify" data-rel="tabs">
+                            <input type="radio" data-toggle="tab" aria-expanded="false">
+                            Notificaciones
+                        </label>
+                        <label class="btn btn-default" id="btoAccion" data="tab-task" data-rel="tabs">
+                            <input type="radio" data-toggle="tab" aria-expanded="false">
+                            Tareas / Servicios
+                        </label>
+                    </div>
+
+                    <!-- notification content -->
+                    <div class="ajax-notifications custom-scroll" id="notify">
+                        <ul class="notification-body">
+                            {des_notificacion}
+                        </ul>
+                    </div>
+
+                    <div class="ajax-notifications custom-scroll" style="display: none" id="task">
+                        <ul class="notification-body">
+                            {des_tarea}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+           <!-- <div id="project-context">
+                <span class="label"></span>
+                <span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Servicios Pendientes <i class="fa fa-angle-down"></i></span>
+
+                <!-- Suggestion: populate this list with fetch and push technique -->
+               <!-- <ul class="dropdown-menu">
+                    <li>
+                        <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Notes on pipeline upgradee</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Assesment Report for merchant account</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+                    </li>
+                </ul>
+            </div>-->
+            <div class="pull-right">
+                <div id="hide-menu" class="btn-header pull-right">
+                    <span> <a href="javascript:void(0);" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+                </div>
+                <div id="logout" class="btn-header transparent pull-right">
+                    <span> <a href="{LOGOUT_LINK}" title="Cerrar Sesion " data-logout-msg="Desea salir de la aplicacion? "><i class="fa fa-sign-out"></i></a> </span>
+                </div>
+                <div id="search-mobile" class="btn-header transparent pull-right">
+                    <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+                </div>
+                <!--<form action="{SEARCH_LINK}" class="header-search pull-right">
+                    <input type="text" name="param" placeholder="Que esta buscando ?" id="search-fld">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+                </form>-->
+                <div id="fullscreen" class="btn-header transparent pull-right">
+                    <span> <a href="javascript:void(0);" onclick="launchFullscreen(document.documentElement);" title="Full Screen"><i class="fa fa-fullscreen"></i></a> </span>
+                </div>
+                <!--<ul class="header-dropdown-list hidden-xs">
+                        <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+                                <ul class="dropdown-menu pull-right">
+                                        <li class="active">
+                                                <a href="javascript:void(0);"><img alt="" src="img/flags/us.png"> US</a>
+                                        </li>
+                                        <li>
+                                                <a href="javascript:void(0);"><img alt="" src="img/flags/es.png"> Spanish</a>
+                                        </li>
+                                        <li>
+                                                <a href="javascript:void(0);"><img alt="" src="img/flags/de.png"> German</a>
+                                        </li>
+                                </ul>
+                        </li>
+                </ul>end multiple lang -->
+            </div>
+        </header>
+        <aside id="left-panel">
+            <div class="login-info">
+                <span>
+                    <a href="javascript:void(0);" id="show-shortcut">
+                        <img src="{img}" alt="me" class="online" /> 
+                        <span>
+                            {usuario}
+                        </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a> 
+                </span>
+            </div>
+
+            <nav class="custom-scroll">
+                <ul>
+                    {menu}
+                </ul>
+            </nav>
+            <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i></span>
+        </aside>
+        <div id="main" role="main">
+            <div id="ribbon">
+                <span class="ribbon-button-alignment"> 
+                    <a href="{RETURN_LINK}" class="btn btn-ribbon" data-title="Regresar al Inicio "  rel="tooltip" data-placement="bottom"  data-html="true">
+                        <i class="fa fa-home"></i>
+                    </a> 
+                </span>
+                <span class="ribbon-button-alignment"> 
+                    <span id="refresh" class="btn btn-ribbon" data-title="Actualizar "  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Ciudado!. podria perder los cambios" data-html="true" data-reset-msg="Desea Actualizar la aplicacion?">
+                        <i class="fa fa-refresh"></i>
+                    </span> 
+                </span>
+                <ol class="breadcrumb">
+                    <li>{TITLE}</li> 
+                </ol>
+            </div>
+            <div id="content">
+                {FORM}
+                <div id="err" data="{ERR}" data_msj="{MSJ}"></div>		
+            </div>
+        </div>
+
+        <div id="shortcut">
+            <ul>
+                {menu_header}
+            </ul>
+        </div>
+        {ARCHIVOSSCRIPT}
+    </body>
+
+</html>

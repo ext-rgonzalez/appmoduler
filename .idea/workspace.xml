@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d231b84-2b40-4640-b589-979b580c417c" name="Default" comment="" />
+    <ignored path="appmoduler.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - appmoduler@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - appmoduler@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="appmoduler" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="sinedController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/sined/controller/sinedController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.032015067">
+              <caret line="598" column="39" selection-start-line="598" selection-start-column="20" selection-end-line="598" selection-end-column="39" />
+              <folding>
+                <marker date="1449197606036" expanded="true" signature="144277:145123" placeholder="UPDATE sined..." />
+                <marker date="1449197606036" expanded="true" signature="144803:144991" placeholder="SELECT bd_a_..sined_config..." />
+                <marker date="1449197606036" expanded="true" signature="168545:169328" placeholder="UPDATE sined..." />
+                <marker date="1449197606036" expanded="true" signature="169008:169196" placeholder="SELECT bd_a_..sined_config..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console_1.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9b9eb816-5845-4f23-8c76-3aa48fe5c799/console_1.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+              <folding>
+                <marker date="1457398740621" expanded="true" signature="29:51" placeholder="select * fro..sys_menu..." />
+                <marker date="1457398740621" expanded="true" signature="53:97" placeholder="select * fro..sys_menu_sub..." />
+                <marker date="1457398740621" expanded="true" signature="100:163" placeholder="select * fro..sys_formulario..." />
+                <marker date="1457398740621" expanded="true" signature="166:224" placeholder="select * fro..sys_frame..." />
+                <marker date="1457398740621" expanded="true" signature="227:279" placeholder="select * fro..sys_detframe..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/modules/sistema/html/js/app.js" />
+        <option value="$PROJECT_DIR$/modules/sined/model/sinedJsonModel.php" />
+        <option value="$PROJECT_DIR$/modules/sined/controller/sinedJsonController.php" />
+        <option value="$PROJECT_DIR$/libs/class.fpdf.php" />
+        <option value="$PROJECT_DIR$/libs/class.fpdf.certificados.php" />
+        <option value="$PROJECT_DIR$/modules/sined/controller/sinedController.php" />
+        <option value="$PROJECT_DIR$/app/bootstrap.php" />
+        <option value="$PROJECT_DIR$/app/appcontroller.php" />
+        <option value="$PROJECT_DIR$/modules/sistema/html/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/view/view.php" />
+        <option value="$PROJECT_DIR$/modules/sistema/model/sistemaModel.php" />
+        <option value="$PROJECT_DIR$/modules/sistema/html/index.html" />
+        <option value="$PROJECT_DIR$/modules/sistema/controller/sistemaController.php" />
+        <option value="$PROJECT_DIR$/app/principalFunction.php" />
+        <option value="$PROJECT_DIR$/core/db_abstract_model.php" />
+        <option value="$PROJECT_DIR$/modules/sistema/model/sistemaJsonModel.php" />
+        <option value="$PROJECT_DIR$/modules/endodoncia/model/endodonciaModel.php" />
+        <option value="$PROJECT_DIR$/modules/sistema/html/js/fb.custom.index.js" />
+        <option value="$PROJECT_DIR$/modules/endodoncia/controller/endodonciaController.php" />
+        <option value="$PROJECT_DIR$/modules/sined/model/sinedModel.php" />
+        <option value="$PROJECT_DIR$/modules/sistema/html/forms/view_table.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9b9eb816-5845-4f23-8c76-3aa48fe5c799/console_1.sql" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="43b801ec-7cc3-4941-9d5d-25a5da1873ed" name="localhost" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="C:/wamp/www/appmoduler" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="F:/soluciones/zerogray" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.vagrant" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="view&#9;FILE&#9;file://C:/wamp/www/appmoduler/modules/sistema/html/forms/view_form.html&#10;view_ta&#9;FILE&#9;file://C:/wamp/www/appmoduler/modules/sistema/html/forms/view_table.html&#10;sine&#9;FILE&#9;file://C:/wamp/www/appmoduler/modules/sined/model/sinedModel.php&#10;princi&#9;FILE&#9;file://C:/wamp/www/appmoduler/app/principalFunction.php&#10;inde&#9;FILE&#9;file://C:/wamp/www/appmoduler/modules/sistema/html/js/fb.custom.index.js&#10;endodoncia&#9;FILE&#9;file://C:/wamp/www/appmoduler/modules/endodoncia/controller/endodonciaJsonController.php&#10;index&#9;FILE&#9;file://C:/wamp/www/appmoduler/index.php" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+  </component>
+  <component name="RunManager" selected="PHP Remote Debug.localhost">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="localhost" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="localhost" session_id="vagrant">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="PHP Remote Debug.localhost" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d231b84-2b40-4640-b589-979b580c417c" name="Default" comment="" />
+      <created>1448850419395</created>
+      <option name="number" value="Default" />
+      <updated>1448850419395</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13615733" sideWeight="0.49234137" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6683761" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15506808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2635432" sideWeight="0.49234137" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.8931186" order="3" side_tool="false" content_ui="tabs" x="-31995" y="-31972" width="1368" height="711" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2635432" sideWeight="0.50765866" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786325" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" x="-3" y="20" width="1372" height="711" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36119872" sideWeight="0.1068814" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1279762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15506808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2641369" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.8931186" order="3" side_tool="false" content_ui="tabs" x="-31995" y="-31972" width="1368" height="711" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/endodoncia/controller/endodonciaController.php</url>
+          <line>1565</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/principalFunction.php</url>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/endodoncia/controller/endodonciaController.php</url>
+          <line>1022</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/endodoncia/controller/endodonciaController.php</url>
+          <line>1006</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/endodoncia/controller/endodonciaController.php</url>
+          <line>552</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/endodoncia/model/endodonciaModel.php</url>
+          <line>438</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="61" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="index.php">
+        <watch expression="$data" />
+      </configuration>
+      <configuration name="PhpRemoteDebugRunConfigurationType">
+        <watch expression="this-&gt;_notificacion" language="PHP" />
+        <watch expression="$this-&gt;_notificacion" language="PHP" />
+        <watch expression=" $controller-&gt;_notificacion" language="PHP" />
+        <watch expression="$controller" language="PHP" />
+        <watch expression="$this-&gt;_notificacion" />
+        <watch expression="$Objvista-&gt;_notificacion" />
+        <watch expression="$cadEmp" />
+        <watch expression="$this-&gt;query" />
+        <watch expression="$cadEmp" />
+        <watch expression="$Objvista-&gt;_tarea" />
+        <watch expression="$this-&gt;query" />
+        <watch expression="$data" />
+        <watch expression="$r" />
+        <watch expression="$r" />
+        <watch expression="$this-&gt;query" />
+        <watch expression="$data" />
+        <watch expression="$data" />
+        <watch expression="$user_data" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/principalFunction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+          <folding>
+            <marker date="1452970016630" expanded="true" signature="21026:21154" placeholder="INSERT INTO hd_servicio..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/endodoncia/model/endodonciaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="901" column="0" selection-start-line="901" selection-start-column="0" selection-end-line="901" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/db_abstract_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/PHPMailer-master/class.smtp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/PHPMailer-master/class.phpmailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="591" column="0" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/controller/sistemaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/class.fpdf.historiaclinica.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.346154">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/fpdf17/fpdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.730769">
+          <caret line="1036" column="0" selection-start-line="1036" selection-start-column="0" selection-end-line="1036" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/PHPMailer-master/PHPMailerAutoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/PHPMailer-master/class.smtp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039443154">
+          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/html/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5207878">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/crm/model/crmJsonModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="35.307693">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/class.fpdf.certificados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6489607">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/class.fpdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.374134">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sined/controller/sinedJsonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5103927">
+          <caret line="70" column="63" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sined/model/sinedJsonModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03926097">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/endodonciaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35172415">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.029310346">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/appcontroller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6189655">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41034484">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/endodoncia/model/endodonciaJsonModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/html/js/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="480" column="30" selection-start-line="480" selection-start-column="30" selection-end-line="480" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/helpdesk/controller/helpdeskController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="419" column="20" selection-start-line="419" selection-start-column="20" selection-end-line="419" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/crm/controller/crmController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2689394">
+          <caret line="371" column="40" selection-start-line="371" selection-start-column="40" selection-end-line="371" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/PHPMailer-master/class.phpmailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43985638">
+          <caret line="591" column="0" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/db_abstract_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8168761">
+          <caret line="103" column="0" selection-start-line="7" selection-start-column="4" selection-end-line="103" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/controller/sistemaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27468583">
+          <caret line="28" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="1120" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18312387">
+          <caret line="48" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="158" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.346154">
+          <caret line="86" column="78" selection-start-line="0" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/model/sistemaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="36.807693">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/model/sistemaJsonModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/controller/sistemaJsonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.961538">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/endodoncia/controller/endodonciaJsonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.115385">
+          <caret line="37" column="49" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32020548">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/html/js/fb.custom.index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1144" column="13" selection-start-line="1144" selection-start-column="13" selection-end-line="1144" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/principalFunction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding>
+            <marker date="1452970016630" expanded="true" signature="21026:21154" placeholder="INSERT INTO hd_servicio..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/endodoncia/controller/endodonciaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1989" column="31" selection-start-line="1989" selection-start-column="31" selection-end-line="1989" selection-end-column="31" />
+          <folding>
+            <marker date="1452984637042" expanded="true" signature="33350:33453" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="33504:33593" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="40263:40365" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="40416:40504" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="80565:80709" placeholder="update endod..." />
+            <marker date="1452984637042" expanded="true" signature="93601:93704" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="93755:93844" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="100466:100568" placeholder="update sys_d..." />
+            <marker date="1452984637042" expanded="true" signature="100619:100707" placeholder="update sys_d..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/endodoncia/model/endodonciaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="44" selection-start-line="38" selection-start-column="7" selection-end-line="39" selection-end-column="44" />
+          <folding>
+            <marker date="1452982433093" expanded="true" signature="235:615" placeholder="SELECT cod_u..sys_usuario..." />
+            <marker date="1452982433093" expanded="true" signature="1775:2653" placeholder="SELECT t1.*,..sys_empresa_contrato..." />
+            <marker date="1452982433093" expanded="true" signature="2982:3055" placeholder="SELECT fbArm..DUAL..." />
+            <marker date="1452982433093" expanded="true" signature="3375:3441" placeholder="SELECT fbArm..DUAL..." />
+            <marker date="1452982433093" expanded="true" signature="10415:10429" placeholder="SELECT * fro..${$vista}..." />
+            <marker date="1452982433093" expanded="true" signature="10441:10466" placeholder="select ${$se..${$tablaAux}..." />
+            <marker date="1452982433093" expanded="true" signature="12695:12714" placeholder="SELECT ${$cl..${$table}..." />
+            <marker date="1452982433093" expanded="true" signature="13892:13990" placeholder="SELECT * FRO..${$tabla}..." />
+            <marker date="1452982433093" expanded="true" signature="16434:16680" placeholder="INSERT INTO ${$user_data['no_esq_tabla']}..." />
+            <marker date="1452982433093" expanded="true" signature="17326:17553" placeholder="INSERT INTO sys_usuario_menu..." />
+            <marker date="1452982433093" expanded="true" signature="17730:17965" placeholder="INSERT INTO sys_usuario_menu_sub..." />
+            <marker date="1452982433093" expanded="true" signature="18330:18566" placeholder="INSERT INTO sys_usuario_empresa..." />
+            <marker date="1452982433093" expanded="true" signature="18672:18916" placeholder="INSERT INTO ${$user_data['no_esq_tabla']}..." />
+            <marker date="1452982433093" expanded="true" signature="19366:19658" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="19969:20260" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="20574:20870" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="21190:21490" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="21800:22091" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="22316:22593" placeholder="INSERT INTO endodoncia_historia_clinica_diagnostico..." />
+            <marker date="1452982433093" expanded="true" signature="22882:23193" placeholder="INSERT INTO endodoncia_historia_clinica_analisis_radiografico..." />
+            <marker date="1452982433093" expanded="true" signature="23488:23770" placeholder="INSERT INTO endodoncia_historia_clinica_alergias..." />
+            <marker date="1452982433093" expanded="true" signature="24069:24359" placeholder="INSERT INTO endodoncia_historia_clinica_medicamentos..." />
+            <marker date="1452982433093" expanded="true" signature="24677:24982" placeholder="INSERT INTO endodoncia_historia_clinica_antecedentes..." />
+            <marker date="1452982433093" expanded="true" signature="25300:25605" placeholder="INSERT INTO endodoncia_historia_clinica_antecedentes..." />
+            <marker date="1452982433093" expanded="true" signature="25927:26235" placeholder="INSERT INTO endodoncia_historia_clinica_antecedentes..." />
+            <marker date="1452982433093" expanded="true" signature="26399:26874" placeholder="INSERT INTO endodoncia_paciente_evolucion..." />
+            <marker date="1452982433093" expanded="true" signature="27099:27429" placeholder="INSERT INTO endodoncia_historia_clinica_informacion_conductos..." />
+            <marker date="1452982433093" expanded="true" signature="27835:28455" placeholder="INSERT INTO endodoncia_registro_imagenes..." />
+            <marker date="1452982433093" expanded="true" signature="29042:29242" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="29396:29726" placeholder="INSERT INTO endodoncia_historia_clinica_informacion_conductos..." />
+            <marker date="1452982433093" expanded="true" signature="30133:30689" placeholder="INSERT INTO endodoncia_registro_imagenes..." />
+            <marker date="1452982433093" expanded="true" signature="31098:31416" placeholder="INSERT INTO endodoncia_pago_detalle..." />
+            <marker date="1452982433093" expanded="true" signature="31762:32072" placeholder="INSERT INTO endodoncia_pago_detalle..." />
+            <marker date="1452982433093" expanded="true" signature="34117:34196" placeholder="SELECT img_c..endodoncia_config..." />
+            <marker date="1452982433093" expanded="true" signature="35346:35499" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="35581:35738" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="35820:35976" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="36058:36213" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="36368:36595" placeholder="INSERT INTO sys_usuario_menu..." />
+            <marker date="1452982433093" expanded="true" signature="36772:37007" placeholder="INSERT INTO sys_usuario_menu_sub..." />
+            <marker date="1452982433093" expanded="true" signature="37376:37625" placeholder="INSERT INTO sys_usuario_empresa..." />
+            <marker date="1452982433093" expanded="true" signature="37734:37960" placeholder="INSERT INTO sys_usuario_perfil..." />
+            <marker date="1452982433093" expanded="true" signature="38340:38611" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="38777:39065" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="39292:39562" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="39732:40023" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="40257:40532" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="40702:40998" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="41237:41515" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="41686:41986" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="42216:42486" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="42656:42947" placeholder="INSERT INTO endodoncia_historia_clinica_tejidos..." />
+            <marker date="1452982433093" expanded="true" signature="43208:43409" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="43561:43836" placeholder="INSERT INTO endodoncia_historia_clinica_diagnostico..." />
+            <marker date="1452982433093" expanded="true" signature="44077:44288" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="44457:44768" placeholder="INSERT INTO endodoncia_historia_clinica_analisis_radiografico..." />
+            <marker date="1452982433093" expanded="true" signature="44987:45185" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="45351:45633" placeholder="INSERT INTO endodoncia_historia_clinica_alergias..." />
+            <marker date="1452982433093" expanded="true" signature="45856:46058" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="46224:46514" placeholder="INSERT INTO endodoncia_historia_clinica_medicamentos..." />
+            <marker date="1452982433093" expanded="true" signature="46752:47036" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="47206:47511" placeholder="INSERT INTO endodoncia_historia_clinica_antecedentes..." />
+            <marker date="1452982433093" expanded="true" signature="47749:48033" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="48203:48508" placeholder="INSERT INTO endodoncia_historia_clinica_antecedentes..." />
+            <marker date="1452982433093" expanded="true" signature="48750:49037" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="49207:49515" placeholder="INSERT INTO endodoncia_historia_clinica_antecedentes..." />
+            <marker date="1452982433093" expanded="true" signature="49679:50157" placeholder="INSERT INTO endodoncia_paciente_evolucion..." />
+            <marker date="1452982433093" expanded="true" signature="50313:50513" placeholder="DELETE FROM ..." />
+            <marker date="1452982433093" expanded="true" signature="50667:50997" placeholder="INSERT INTO endodoncia_historia_clinica_informacion_conductos..." />
+            <marker date="1452982433093" expanded="true" signature="51403:52027" placeholder="INSERT INTO endodoncia_registro_imagenes..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sined/model/sinedModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2556391">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/html/forms/view_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13869864">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sistema/html/forms/view_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.739726">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9b9eb816-5845-4f23-8c76-3aa48fe5c799/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d27f7874/9b9eb816-5845-4f23-8c76-3aa48fe5c799/appmoduler.sined_materia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9b9eb816-5845-4f23-8c76-3aa48fe5c799/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+          <folding>
+            <marker date="1457398740621" expanded="true" signature="29:51" placeholder="select * fro..sys_menu..." />
+            <marker date="1457398740621" expanded="true" signature="53:97" placeholder="select * fro..sys_menu_sub..." />
+            <marker date="1457398740621" expanded="true" signature="100:163" placeholder="select * fro..sys_formulario..." />
+            <marker date="1457398740621" expanded="true" signature="166:224" placeholder="select * fro..sys_frame..." />
+            <marker date="1457398740621" expanded="true" signature="227:279" placeholder="select * fro..sys_detframe..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sined/controller/sinedController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032015067">
+          <caret line="598" column="39" selection-start-line="598" selection-start-column="20" selection-end-line="598" selection-end-column="39" />
+          <folding>
+            <marker date="1449197606036" expanded="true" signature="144277:145123" placeholder="UPDATE sined..." />
+            <marker date="1449197606036" expanded="true" signature="144803:144991" placeholder="SELECT bd_a_..sined_config..." />
+            <marker date="1449197606036" expanded="true" signature="168545:169328" placeholder="UPDATE sined..." />
+            <marker date="1449197606036" expanded="true" signature="169008:169196" placeholder="SELECT bd_a_..sined_config..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

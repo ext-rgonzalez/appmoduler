@@ -1,0 +1,40 @@
+<form action="?app={FORM_CONTROLLER}&met={FORM_MET}" method="POST" id="form" class="smart-form client-form" data="ZW5kb2RvbmNpYQ==">
+    <header>
+        Generar Remisiones
+    </header>
+    <fieldset>
+        <section>
+            <label class="label">Digite su usuario</label>
+            <label class="input"> <i class="icon-append fa fa-user"></i>
+                <input type="text" name="usuario_usuario" required>
+        </section>
+        <section>
+            <label class="label">Contraseña:</label>
+			<label class="input"> <i class="icon-append fa fa-lock"></i>
+			<input id="password" type="password" name="password_usuario" class="form-control" value="" required>
+        </section>
+		<section>
+			<label class="label">Fecha Inicial</label>
+			<input type="text" class=" selectFecha form-control" id="fec_inicial" name="fec_inicial" value="" placeholder=" ">
+		</section>
+		<section>
+			<label class="label">Fecha Final</label>
+			<input type="text" class=" selectFecha form-control" id="fec_inicial" name="fec_final" value="" placeholder=" ">
+		</section>
+		<section>
+			<label class="label">Pacientes Remitidos</label>
+			<select id="cod_historia_clinica" class="selectFiltro" style="width:100%" name="cod_historia_clinica" placeholder="Seleccione" disabled>
+				<option>  </option>
+			</select>
+		</section>
+		<input type="hidden" name="no_esq_tabla" value="endodoncia_odontologo">
+    </fieldset>
+    <footer>
+        <button type="button" class="btn btn-primary" id="btoAccion" data-rel="VALIDAODONTOLOGO" data="endodoncia_odontologo">
+			Iniciar Sesion
+		</button>
+    </footer>
+
+
+</form>
+<div id="err" data="{ERR}" data_msj="{MSJ}"></div>

@@ -1,0 +1,140 @@
+<div class="row">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div id="shortcut_1"> 
+                        <ul>
+                            {menu_shortcut}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="well well-light well-sm no-margin no-padding">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="myCarousel" class="carousel fade profile-carousel">
+                                    {slide_empresas}
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-3 profile-pic">
+                                        <img src="{img}">
+                                        <div class="padding-10">
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <h4 class="font-md">   
+                                                <strong>1,543</strong><br>
+                                                <small>Conexiones</small>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h1><span class="semi-bold">{usuario}</span>
+                                        <br>
+                                        <small> {nom}</small></h1>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <p class="text-muted">
+                                                    <i class="fa fa-phone"></i>&nbsp;&nbsp;<span class="txt-color-darken">{tel_usuario}</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="text-muted">
+                                                    <i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:{email}">{email}</a>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="text-muted">
+                                                    <i class="fa fa-facebook"></i>&nbsp;&nbsp;<span class="txt-color-darken">{fb_usuario}</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="text-muted">
+                                                    <i class="fa fa-twitter"></i>&nbsp;&nbsp;<span class="txt-color-darken">{tw_usuario}</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="text-muted">
+                                                    <i class="fa fa-linkedin"></i>&nbsp;&nbsp;<span class="txt-color-darken">{linkid_usuario}</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="text-muted">
+                                                    <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Registro <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Regsitrado desde">{fec_usuario}</a></span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                            <br>
+                                            <p class="font-md">
+                                                <i>Acerca de mi...</i>
+                                            </p>
+                                            <p style="text-align:justify;">{intro_usuario}</p>
+                                            <br>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h1><small>Vistantes Recientes</small></h1>
+                                        <ul class="list-inline friends-list">
+                                            <li><img src="img/avatars/1.png" alt="friend-1">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>    
+                </div>
+           
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="jarviswidget">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
+                            <h2> Cronograma de actividades </h2>
+                            <div class="widget-toolbar">
+                                <div class="btn-group">
+                                    <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                                        Mostrar <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu js-status-update pull-right">
+                                        <li>
+                                            <a href="javascript:void(0);" id="mt">Mes</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" id="ag">Agenda</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" id="td">Hoy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </header>
+                        <div>
+                            <div class="widget-body no-padding">
+                                <div class="widget-body-toolbar">
+                                    <div id="calendar-buttons">
+                                         <div class="btn-group">
+                                            <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
+                                            <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+                                         </div>
+                                    </div>
+                                </div>
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{modal}
