@@ -1,5 +1,5 @@
 <?php
-class appModel{
+class appController{
     public $_controlador;
     public $_metodo;
     public $_argumentos;
@@ -8,7 +8,6 @@ class appModel{
             $this->_controlador = base64_decode(filter_input(INPUT_GET, 'app', FILTER_SANITIZE_URL)); 
             $this->_metodo      = base64_decode(filter_input(INPUT_GET, 'met', FILTER_SANITIZE_URL));
             $this->_argumentos  = explode(',',base64_decode(filter_input(INPUT_GET, 'arg', FILTER_SANITIZE_URL)));
-            //var_dump($this->_argumentos);exit;
         endif;
         if(!$this->_controlador):
             $this->_controlador = DEFAULT_CONTROLLER;

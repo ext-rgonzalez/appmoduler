@@ -10,7 +10,27 @@ function formateaPeticion(){
         return $peticion;
     }
 }
+//function para redirigir a un strategi segun parametros
+function redireccionar($url=array()){
+    $_mod = !empty($url["modulo"])?base64_encode($url["modulo"]):null;
+    $_met = !empty($url["met"])?base64_encode($url["met"]):null;
+    $_arg = !empty($url["arg"])?base64_encode(implode(',', $url["arg"])):null;
 
+    if(!empty($url))
+        header('Location: ?app='.$_mod.'&met='.$_met.'&arg='.$_arg);
+}
+//funcion para harcodear formulario index o principal
+function formateaIndex($_Objmodelo=null, $_Objvista=null, $formulario=0, $_dataFormulario=null, $_formulario=null){
+    $_Objmodelo->get_datos($_dataFormulario, 'head_formulario_config="'.$_formulario.'"', 'sys_formulario_config');
+    $_Objvista->_vistaDatos = $_Objmodelo->_data[0];
+    $_Objmodelo->get_config_usuario();
+    $_Objvista->_asignacion->infoUsuario = $_Objmodelo->_data;
+    $_Objvista->_asignacion->infoSession = $_SESSION;
+    $_Objmodelo->get_datos('fbDevuelveArchivos('.$formulario.',1) as _CSS');
+    $_Objvista->_css  = $_Objmodelo->_data[0]["_CSS"];
+    $_Objmodelo->get_datos('fbDevuelveArchivos('.$formulario.',2) as _JS');
+    $_Objvista->_js   = $_Objmodelo->_data[0]["_JS"];
+}
 #funcion para devolver partiendo desde el final de la cadena
 function devuelveString($cadena=null,$busqueda=null,$case=0){
     $tamano   = strlen($cadena);
@@ -46,7 +66,7 @@ function alert_data($data){
 }
 
 #funcion para recuperar datos segun accion de uri
-function helper_user_data($metodo) {
+function formateaMetodo($metodo) {
     $count=0;$t;
     $user_data = array();
     switch ($metodo){
@@ -63,14 +83,10 @@ function helper_user_data($metodo) {
         case 'nuevoRegistro':
             if($_POST) {
                 foreach($_POST as $key=>$val){
-                    #if(!empty($val)){
                     if(strpos($key,'password_') !== false){$val = md5($val);}
                     $user_data[$key] = $val;
 
-                    #}
                 }
-                //
-                // obtenemos la informacion de los adjuntos segun el numero de input file que tenga el formulario
                 if(isset($_FILES) And !empty($_FILES)){
                     $pos = strpos($user_data['no_esq_tabla'], '_');
                     $nomTabla = substr($user_data['no_esq_tabla'],$pos+1,strlen($user_data['no_esq_tabla']));
@@ -92,10 +108,8 @@ function helper_user_data($metodo) {
                 }
             }else{
                 foreach($_GET as $key=>$val):
-                    #if(!empty($val)){
                     if(strpos($key,'password_') !== false){$val = md5($val);}
                     $user_data[$key] = $val;
-                    #}
                 endforeach;
             }
             break;

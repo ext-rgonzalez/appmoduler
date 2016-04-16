@@ -8,8 +8,9 @@ class ModeloSistema extends DBAbstractModel {
 //             si no existe se imprime nuevamente la vista de sesion y se muestra el mensaje
     public function get_login($data=array()){
         if(array_key_exists('username', $data)){
-            $this->query = " SELECT cod_usuario,CONCAT(nom_usuario,' ',ape_usuario) as nom_usuario,email_usuario,
-                                    usuario_usuario,cod_estado,concat('modules/sistema/adjuntos/',img_usuario) as img_usuario 
+            $this->query = " SELECT cod_usuario,CONCAT(nom_usuario,' ',ape_usuario) as nom_usuario,email_usuario,tel_usuario,tw_usuario,
+                                    fb_usuario,intro_usuario,linkid_usuario,ult_conexion_usuario,count_conexion_usuario,usuario_usuario,
+                                    cod_estado,concat('modules/sistema/adjuntos/',img_usuario) as img_usuario
                                FROM sys_usuario
                               WHERE usuario_usuario  = '" .$data['username']. "' 
                                 AND password_usuario = '" .md5($data['password']). "'";
@@ -17,12 +18,9 @@ class ModeloSistema extends DBAbstractModel {
         }
         if(count($this->rows) == 1){
             foreach ($this->rows[0] as $propiedad=>$valor) {
-                $propiedad           = str_replace('_usuario','',$propiedad);
-                $this->_session[]    = $propiedad;
-                $this->_sessionVal[] = $valor;
-                $this->$propiedad    = $valor;
+                Session::set(str_replace('_usuario','',$propiedad), $valor);
             }
-            if($this->cod_estado != 'AAA'){
+            if(Session::get('cod_estado') != 'AAA'){
                 $this->msj = 'La sesi&oacute;n esta desactivada, consulte al administrador. ';
                 $this->err = '1';				
                 return false;exit();	
@@ -37,72 +35,50 @@ class ModeloSistema extends DBAbstractModel {
 //Autor:       David G -  Abr 2-2014 
 //descripcion: Metodo para cargar los datos informativos generales de cada usuario en el 
 //             dashboard de la app si el usuario se loguea exitosamente.	
-    public function get_config_usuario($usuario){
+    public function get_config_usuario(){
         ModeloSistema::get_datos('fbTraeEmpresa('. Session::get('cod') .') as result');
-        $cadEmp = $this->_data[0]['result'];
+        $this->_data["infoEmpresa"] = $this->_data[0]['result'];
         #traemos contrato, empresa, modulos del usuario
         $this->rows  = "";
         $this->query = "";
-        $this->query = " SELECT t1.*,t2.*,t3.*,t4.*,t5.*,concat('modules/sistema/adjuntos/',t2.img_empresa) as LogoEmpresa, t2.nom_empresa as NomEmpresa  
+        $this->query = " SELECT t1.*,t2.*,t3.*,t4.*,t5.*,concat('modules/sistema/adjuntos/',t2.img_empresa) as LogoEmpresa, t2.nom_empresa as NomEmpresa
                            FROM sys_empresa_contrato as t1,sys_empresa          as t2,
                                 sys_contrato         as t3,mod_modulo           as t4,
-                                sys_ciudad           as t5,sys_usuario_empresa  as t6   
-                          WHERE t1.cod_empresa     = t2.cod_empresa  
-                            AND t1.cod_contrato    = t3.cod_contrato 
-                            AND t1.cod_modulo      = t4.cod_modulo   
-                            AND t2.cod_ciudad      = t5.cod_ciudad 
+                                sys_ciudad           as t5,sys_usuario_empresa  as t6
+                          WHERE t1.cod_empresa     = t2.cod_empresa
+                            AND t1.cod_contrato    = t3.cod_contrato
+                            AND t1.cod_modulo      = t4.cod_modulo
+                            AND t2.cod_ciudad      = t5.cod_ciudad
                             AND t2.cod_empresa     = t6.cod_empresa
-                            AND t1.cod_estado      = 'AAA'           
-                            AND t6.cod_usuario     = '" .$usuario. "'";
+                            AND t1.cod_estado      = 'AAA'
+                            AND t6.cod_usuario     = '" . Session::get('cod'). "'";
         $this->get_results_from_query();
         if(count($this->rows) >= 1){
             foreach ($this->rows as $pro=>$va) {
-                $this->_empresa[] = array($pro=>$va);
+                $this->_data["infoGeneral"][$pro] = $va;
             }
         }
         #traemos las notificaciones
         $this->rows  = "";
         $this->query = "";
-        $this->query = " SELECT fbArmaNotificacionTarea('$cadEmp',1) AS des_notificacion FROM DUAL";
+        $this->query = " SELECT fbArmaNotificacionTarea('".$this->_data['infoEmpresa']."',1) AS des_notificacion FROM DUAL";
         $this->get_results_from_query();
         if(count($this->rows) >= 1){
             foreach ($this->rows as $pro=>$va) {
-                $this->_notificacion[$pro] = $va;
+                $this->_data["infoNotificaciones"][$pro] = $va;
             }
         }
 
         #traemos las notificaciones
         $this->rows  = "";
         $this->query = "";
-        $this->query = " SELECT fbArmaNotificacionTarea('$cadEmp',2) AS des_tarea FROM DUAL";
+        $this->query = " SELECT fbArmaNotificacionTarea('".$this->_data['infoEmpresa']."',2) AS des_tarea FROM DUAL";
         $this->get_results_from_query();
         if(count($this->rows) >= 1){
             foreach ($this->rows as $pro=>$va) {
-                $this->_tarea[$pro] = $va;
+                $this->_data["infoTareas"][$pro] = $va;
             }
         }
-        #traemos los mensajes
-        /*$this->rows  = "";
-        $this->query = "";
-        $this->query = " SELECT CONCAT('" .INI_MSJ. "', 
-                                       'data=',t1.cod_mensajes,'  data-rel=mensajes',
-                                       '" .MED_MSJ. "', t2.nom_usuario,  
-                                       '" .MED_MSJ_1. "',t1.fec_mensajes,'" .MED_MSJ_2. "',
-                                       SUBSTRING(t1.des_mensajes,1,45)  ,'" .FIN_MSJ. "') as des_mensajes     
-                                  FROM sys_mensajes as t1, sys_usuario as t2   
-                                 WHERE t1.cod_estado      = 'MAA'	       
-                                   AND t1.de_cod_usuario  = t2.cod_usuario 
-                                   AND t1.a_cod_usuario   = '" .$usuario. "'";
-        $this->get_results_from_query();
-        $this->_numMensajes[0] = array('num_mensajes'=>0);	
-        $this->_mensajes[0]    = array('des_mensajes'=>"");
-        if(count($this->rows) >= 1){
-            $this->_numMensajes[0] = array('num_mensajes'=>count($this->rows));
-            foreach ($this->rows as $pro=>$va) {				
-                $this->_mensajes[] = $va;
-            }
-        }*/
-
         #traemos los menus y submenus
         $this->rows  = "";
         $this->query = "";  
@@ -113,34 +89,40 @@ class ModeloSistema extends DBAbstractModel {
                                 fbArmaSubMenu(t1.cod_menu,t3.cod_usuario),'" .FIN_SNAV. "') as menu 
                            FROM sys_menu as t1, sys_usuario_menu as t3 
                           WHERE t3.cod_menu      = t1.cod_menu 
-                            AND t3.cod_usuario   = '" .$usuario. "'  
+                            AND t3.cod_usuario   = '" . Session::get('cod'). "'
                        ORDER BY t1.cod_indice";
         $this->get_results_from_query();
         if(count($this->rows) >= 1){
-            foreach ($this->rows as $pro=>$va) {				
-                $this->_menu[] = $va;
+            foreach ($this->rows as $pro=>$va) {
+                if($va[key($va)]!=null)
+                    $this->_data["infoMenu"][]= $va[key($va)];
             }
         }else{$this->_menu[0] = array('menu'=>"");}
         #traemos los menusHeader o accesos directos de la app
         $this->rows  = "";
         $this->query = "";  
-        $this->query = " SELECT fbArmaSubMenuHeader($usuario) as menu_header";
+        $this->query = " SELECT fbArmaSubMenuHeader(".Session::get('cod').") as menu_header";
         $this->get_results_from_query();
         if(count($this->rows) >= 1){
-            foreach ($this->rows as $pro=>$va) {				
-                $this->_menuHeader[] = $va;
+            foreach ($this->rows as $pro=>$va) {
+                $this->_data["infoMenuHeader"] = $va;
             }
-        }else{$this->_menuHeader[0] = array('menu_header'=>"");}
+        }else{
+            $this->_data["infoMenuHeader"][0] = array('menu_header'=>"");
+        }
         #traemos los shortcut
         $this->rows  = "";
         $this->query = "";  
-        $this->query = " SELECT fbArmaSubMenuHeaderShortCut($usuario) as menu_shortcut";
+        $this->query = " SELECT fbArmaSubMenuHeaderShortCut(".Session::get('cod').") as menu_shortcut";
         $this->get_results_from_query();
         if(count($this->rows) >= 1){
-            foreach ($this->rows as $pro=>$va) {				
-                $this->_menuShorcut[] = $va;
+            foreach ($this->rows as $pro=>$va) {
+                $this->_data["infoMenuShortCut"] = $va;
             }
-        }else{$this->_menuShorcut[0] = array('menu_shortcut'=>"");}
+        }else{
+            $this->_data["infoMenuShortCut"][0]= array('menu_shortcut'=>"");
+        }
+        unset($this->_data[0]);
     }
 //Autor:       David G -  Abr 2-2014 
 //descripcion: Metodo general para cargar los formularios y su contenido segun los parametros,

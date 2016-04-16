@@ -11,12 +11,8 @@ class sinedController {
         require_once ROOT . DEFAULT_CORE;
         require_once ROOT . DEFAUL_FUNCTION;
         require_once ROOT . 'modules/sined/model/sinedModel.php';
-        require_once ROOT . VIEW_PACH . DS . 'view.php';
         if (!Session::get('usuario')) {
-            $Objvista = new view;
-            $data = array('ERR' => 3,
-                'MSJ' => 'No ha iniciado Sesi&oacute;n');
-            $Objvista->retornar_vista(DEFAULT_CONTROLLER, 'sined', 'login', 'login', $data);
+
         } else {
             $met= isset($argumentos[6]) ? $argumentos[6] : "N";
             $sined = new ModeloSined();

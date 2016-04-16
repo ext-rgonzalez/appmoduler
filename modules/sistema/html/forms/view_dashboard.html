@@ -1,3 +1,75 @@
+<div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">Agendar Cita / Evento</h4>
+            </div>
+            <div class="modal-body widget-body ">
+                <div class="form-group" style="">
+                    <div class="col-lg-0">
+                        <div class="input-group" style="width:100%">
+                            <input type="text" class=" form-control" id="no_nom_agenda" name="no_nom_agenda" value="" placeholder="Nombre del paciente">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="">
+                    <div class="col-lg-0">
+                        <textarea id="textarea" name="no_des_agenda" rows="6" class=" form-control" placeholder="Observaciones"></textarea>
+                    </div>
+                </div>
+                <div class="form-group" style="">
+                    <div class="col-lg-0">
+                        <div class="input-group" style="width:100%">
+                            <input type="text" class=" form-control" id="no_agendamiento" name="no_agendamiento" value=" " placeholder="" readonly="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="">
+                    <label class="col-lg-5 control-label" for="no_cod_empresa">Empresa</label>
+                    <div class="col-lg-7">
+                        <div class="input-group" style="width:100%">
+                            <select id="no_cod_empresa" class="selectFiltro " style="width:100%" name="no_cod_empresa" placeholder="Seleccione" tabindex="-1">
+                                <option>  </option>
+                                <option data-selected="cod_empresa" value="15">RUBIK GROUP - 001111235</option>
+                                <option data-selected="cod_empresa" value="16">INSTITUCION EDUCATIVA ATANASIO GIRARDOT - 000</option>
+                                <option data-selected="cod_empresa" value="18">EXPLORA VIAJES - 9000716031</option>
+                                <option data-selected="cod_empresa" value="19">EXPLORA EVENTOS - 30323554</option>
+                                <option data-selected="cod_empresa" value="20">miendodoncia.com - 75089034</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="">
+                    <label class="col-lg-5 control-label" for="no_ind_confirma">Confirmado ?</label>
+                    <div class="col-lg-7">
+                        <label class="checkbox">
+                            <input type="checkbox" id ="no_ind_confirma" name="no_ind_confirma" value="1">
+                        </label>
+                    </div>
+                </div>
+                <section class="col col-5">
+                    <label class="label">Checkbox Toggles</label>
+                    <label class="toggle">
+                        <input type="checkbox" name="checkbox-toggle" checked="checked">
+                        <i data-swchon-text="ON" data-swchoff-text="OFF"></i>Cassandra</label>
+                    <label class="toggle">
+                        <input type="checkbox" name="checkbox-toggle">
+                        <i data-swchon-text="ON" data-swchoff-text="OFF"></i>Clemencia</label>
+                    <label class="toggle">
+                        <input type="checkbox" name="checkbox-toggle">
+                        <i data-swchon-text="ON" data-swchoff-text="OFF"></i>Desiderata</label>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="bto_enviar">Agregar</button>
+                <button type="button" class="btn btn-primary" id="bto_editar" disabled="disabled">Editar</button>
+                <button type="button" class="btn btn-danger" id="bto_eliminar" disabled="disabled">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="row">
         <div class="col-sm-12">
@@ -5,136 +77,277 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div id="shortcut_1"> 
                         <ul>
-                            {menu_shortcut}
+                            {$infoUsuario["infoMenuShortCut"]["menu_shortcut"]}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-12">
-        <div class="well well-sm">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="well well-light well-sm no-margin no-padding">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div id="myCarousel" class="carousel fade profile-carousel">
-                                    {slide_empresas}
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-3 profile-pic">
-                                        <img src="{img}">
-                                        <div class="padding-10">
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <h4 class="font-md">   
-                                                <strong>1,543</strong><br>
-                                                <small>Conexiones</small>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <h1><span class="semi-bold">{usuario}</span>
-                                        <br>
-                                        <small> {nom}</small></h1>
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <p class="text-muted">
-                                                    <i class="fa fa-phone"></i>&nbsp;&nbsp;<span class="txt-color-darken">{tel_usuario}</span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="text-muted">
-                                                    <i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:{email}">{email}</a>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="text-muted">
-                                                    <i class="fa fa-facebook"></i>&nbsp;&nbsp;<span class="txt-color-darken">{fb_usuario}</span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="text-muted">
-                                                    <i class="fa fa-twitter"></i>&nbsp;&nbsp;<span class="txt-color-darken">{tw_usuario}</span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="text-muted">
-                                                    <i class="fa fa-linkedin"></i>&nbsp;&nbsp;<span class="txt-color-darken">{linkid_usuario}</span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p class="text-muted">
-                                                    <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Registro <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Regsitrado desde">{fec_usuario}</a></span>
-                                                </p>
-                                            </li>
-                                        </ul>
-                                            <br>
-                                            <p class="font-md">
-                                                <i>Acerca de mi...</i>
-                                            </p>
-                                            <p style="text-align:justify;">{intro_usuario}</p>
-                                            <br>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <h1><small>Vistantes Recientes</small></h1>
-                                        <ul class="list-inline friends-list">
-                                            <li><img src="img/avatars/1.png" alt="friend-1">
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="jarviswidget">
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+                    <h2> Estadisticas </h2>
+                </header>
+                <div>
+                    <div class="widget-body no-padding">
+                        <div class="widget-body-toolbar">
+                            <canvas id="canvas" height="300" width="600"></canvas>
                         </div>
-                    </div><br>    
+                    </div>
                 </div>
-           
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="jarviswidget">
-                        <header>
-                            <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
-                            <h2> Cronograma de actividades </h2>
-                            <div class="widget-toolbar">
-                                <div class="btn-group">
-                                    <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-                                        Mostrar <i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu js-status-update pull-right">
-                                        <li>
-                                            <a href="javascript:void(0);" id="mt">Mes</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" id="ag">Agenda</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" id="td">Hoy</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </header>
-                        <div>
-                            <div class="widget-body no-padding">
-                                <div class="widget-body-toolbar">
-                                    <div id="calendar-buttons">
-                                         <div class="btn-group">
-                                            <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
-                                            <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
-                                         </div>
-                                    </div>
-                                </div>
-                                <div id="calendar"></div>
-                            </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-3">
+            <div class="jarviswidget">
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+                    <h2> Estadisticas </h2>
+                </header>
+                <div>
+                    <div class="widget-body no-padding">
+                        <div class="widget-body-toolbar">
+                            <canvas id="chart-area" height="660" width="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-3">
+            <div class="jarviswidget">
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+                    <h2> Estadisticas </h2>
+                </header>
+                <div>
+                    <div class="widget-body no-padding">
+                        <div class="widget-body-toolbar">
+                            <canvas id="chart-area_1" height="660" width="600"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="well well-light well-sm no-margin no-padding">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3 profile-pic">
+                                <img src="{$infoSession['img']}">
+                                <div class="padding-10">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h4 class="font-md">
+                                        <strong>1,543</strong><br>
+                                        <small>Conexiones</small>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <h1><span class="semi-bold">{$infoSession["nom"]} </span>
+                                <br>
+                                <small> </small></h1>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p class="text-muted">
+                                            <i class="fa fa-phone"></i>&nbsp;&nbsp;<span class="txt-color-darken">{$infoSession['tel']} </span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">
+                                            <i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:"> {$infoSession['email']}</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">
+                                            <i class="fa fa-facebook"></i>&nbsp;&nbsp;<span class="txt-color-darken"> {$infoSession['fb']}</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">
+                                            <i class="fa fa-twitter"></i>&nbsp;&nbsp;<span class="txt-color-darken"> {$infoSession['tw']}</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">
+                                            <i class="fa fa-linkedin"></i>&nbsp;&nbsp;<span class="txt-color-darken"> {$infoSession['linkid']}</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">
+                                            <i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Registro <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Regsitrado desde"></a></span>
+                                        </p>
+                                    </li>
+                                </ul>
+                                    <br>
+                                    <p class="font-md">
+                                        <i>Acerca de mi...</i>
+                                    </p>
+                                    <p style="text-align:justify;">{$infoSession['intro']}</p>
+                                    <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="jarviswidget">
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
+                    <h2> Cronograma de actividades </h2>
+                    <div class="widget-toolbar">
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                                Mostrar <i class="fa fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu js-status-update pull-right">
+                                <li>
+                                    <a href="javascript:void(0);" id="mt">Mes</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="ag">Agenda</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="td">Hoy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                <div>
+                    <div class="widget-body no-padding">
+                        <div class="widget-body-toolbar">
+                            <div id="calendar-buttons">
+                                 <div class="btn-group">
+                                    <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+                                 </div>
+                            </div>
+                        </div>
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-{modal}
+{literal}
+<script>
+    var doughnutData = [
+        {
+            value: 300,
+            color:"#F7464A",
+            highlight: "#FF5A5E",
+            label: "Red"
+        },
+        {
+            value: 50,
+            color: "#46BFBD",
+            highlight: "#5AD3D1",
+            label: "Green"
+        },
+        {
+            value: 100,
+            color: "#FDB45C",
+            highlight: "#FFC870",
+            label: "Yellow"
+        },
+        {
+            value: 40,
+            color: "#949FB1",
+            highlight: "#A8B3C5",
+            label: "Grey"
+        },
+        {
+            value: 120,
+            color: "#4D5360",
+            highlight: "#616774",
+            label: "Dark Grey"
+        }
+
+    ];
+
+    var doughnutData1 = [
+        {
+            value: 300,
+            color:"#F7464A",
+            highlight: "#FF5A5E",
+            label: "Red"
+        },
+        {
+            value: 50,
+            color: "#46BFBD",
+            highlight: "#5AD3D1",
+            label: "Green"
+        },
+        {
+            value: 100,
+            color: "#FDB45C",
+            highlight: "#FFC870",
+            label: "Yellow"
+        },
+        {
+            value: 40,
+            color: "#949FB1",
+            highlight: "#A8B3C5",
+            label: "Grey"
+        },
+        {
+            value: 120,
+            color: "#4D5360",
+            highlight: "#616774",
+            label: "Dark Grey"
+        }
+
+    ];
+
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+    var barChartData = {
+        labels : ["January","February","March","April","May","June","July"],
+        datasets : [
+            {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            },
+            {
+                fillColor : "rgba(151,187,205,0.5)",
+                strokeColor : "rgba(151,187,205,0.8)",
+                highlightFill : "rgba(151,187,205,0.75)",
+                highlightStroke : "rgba(151,187,205,1)",
+                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            },
+            {
+                fillColor : "rgba(215,40,40,0.6)",
+                strokeColor : "rgba(215,40,40,0.9)",
+                highlightFill : "rgba(215,40,40,0.73)",
+                highlightStroke : "rgba(215,40,40,1)",
+                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            }
+        ]
+
+    }
+    window.onload = function(){
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(barChartData, {
+            responsive : true
+        });
+
+        var ctx1 = document.getElementById("chart-area").getContext("2d");
+        window.myDoughnut = new Chart(ctx1).Doughnut(doughnutData, {responsive : true});
+
+        var ctx1 = document.getElementById("chart-area_1").getContext("2d");
+        window.myDoughnut = new Chart(ctx1).Doughnut(doughnutData1, {responsive : true});
+    }
+{/literal}
+</script>

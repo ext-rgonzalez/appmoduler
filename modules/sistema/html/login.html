@@ -2,67 +2,119 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
-		<title>{TITLE}</title>
+		<title>{$titulo}</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		{ARCHIVOSCSS}
+		<link rel="stylesheet" type="text/css" media="screen" href="modules/sistema/html/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="modules/sistema/html/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="modules/sistema/html/css/smartadmin-production.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="modules/sistema/html/css/smartadmin-skins.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="modules/sistema/html/css/demo.css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 	</head>
 	<body id="login" class="animated fadeInDown">
 		<header id="header">
-			<!--<div id="logo-group">
+			<div id="logo-group">
 				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
 			</div>
 
-			<span id="login-header-space"> <span class="hidden-mobile">Need an account?</span> <a href="register.html" class="btn btn-danger">Creat account</a> </span>-->
+			<span id="login-header-space"> <span class="hidden-mobile">Need an account?</span> <a href="register.html" class="btn btn-danger">Creat account</a> </span>
 
 		</header>
 
 		<div id="main" role="main">
 			<div id="content" class="container">
-                            <div class="row">
-                               
-                                        <!--<h1 class="txt-color-red login-header-big">appModuler</h1>
-                                        <div class="hero">
+				<div class="row">
+				 	<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+						<h1 class="txt-color-red login-header-big">appModuler</h1>
+						<div class="hero">
 
-                                                <div class="pull-left login-desc-box-l">
-                                                        <h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
-                                                        <div class="login-app-icons">
-                                                                <a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
-                                                                <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
-                                                        </div>
-                                                </div>
+								<div class="pull-left login-desc-box-l">
+										<h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
+										<div class="login-app-icons">
+												<a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
+												<a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
+										</div>
+								</div>
 
-                                                <img src="img/demo/iphoneview.png" class="pull-right display-image" alt="" style="width:210px">
+								<img src="img/demo/iphoneview.png" class="pull-right display-image" alt="" style="width:210px">
 
-                                        </div>
--->
-                                        <!--<div class="row">
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                        <h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
-                                                        <p>
-                                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
-                                                        </p>
-                                                </div>
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                        <h5 class="about-heading">Not just your average template!</h5>
-                                                        <p>
-                                                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
-                                                        </p>
-                                                </div>
-                                        </div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+						<div class="well no-padding">
+							<form action="?app={'sistema'|base64_encode}&met={'login'|base64_encode}=" method="POST" id="loginForm" class="smart-form client-form">
+								<header>
+									Iniciar Sesion
+								</header>
+								<fieldset>
+									<section>
+										<label class="label">Usuario:</label>
+										<label class="input"> <i class="icon-append fa fa-user"></i>
+											<input id="username" type="text" name="username" class="form-control" value="" placeholder="Ingrese su Usuario ..." required>
+											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Porfavor ingrese su usuario </b>
+										</label>
+									</section>
 
-                                    </div>-->
-                                <div class="col-xs-0 col-sm-0 col-md-0 col-lg-4 hidden-md hidden-sm hidden-xs"></div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col">
-                                    <div class="well no-padding">
-                                        {FORM}
-                                    </div>
-                                </div>
-                           
+									<section>
+										<label class="label">Contraseña:</label>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<input id="password" type="password" name="password" class="form-control" value="" required>
+											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Porfavor ingrese su contrase&ntilde;a </b>
+										</label>
+									</section>
+
+									<section>
+										<label class="checkbox">
+											<input type="checkbox" name="remember" checked="">
+											<i></i>Recordame
+										</label>
+									</section>
+									<div class="note">
+										<a href="">Ha olvidado su Contraseña?</a>
+									</div>
+								</fieldset>
+								<footer>
+									<button type="submit" class="btn btn-primary">
+										Iniciar Sesion
+									</button>
+								</footer>
+
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
+						<p>
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+						</p>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<h5 class="about-heading">Not just your average template!</h5>
+						<p>
+							Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
+						</p>
+					</div>
+				</div>
 			</div>
-
+			<div id="err" data="{$mensaje['ERR']}" data_msj="{$mensaje['MSJ']}"></div>
 		</div>
-		{ARCHIVOSSCRIPT}
+	</div>
+	<script src="modules/sistema/html/js/plugin/pace/pace.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script> if (!window.jQuery){literal} { document.write('<script src="modules/sistema/html/js/libs/jquery-2.0.2.min.js"><\/script>');} {/literal}</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script> if (!window.jQuery.ui) {literal}{ document.write('<script src="modules/sistema/html/js/libs/jquery-ui-1.10.3.min.js"><\/script>');} {/literal}</script>
+	<script src="modules/sistema/html/js/bootstrap/bootstrap.min.js"></script>
+	<script src="modules/sistema/html/js/plugin/cookie/jquery-cookie.js"></script>
+	<script src="modules/sistema/html/js/notification/SmartNotification.min.js"></script>
+	<script src="modules/sistema/html/js/smartwidgets/jarvis.widget.min.js"></script>
+	<script src="modules/sistema/html/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+	<script src="modules/sistema/html/js/plugin/select2/select2.min.js"></script>
+	<script src="modules/sistema/html/js/app.js"></script>
+	<script src="modules/sistema/html/js/fb.custom.login.js"></script>
 	</body>
 </html>

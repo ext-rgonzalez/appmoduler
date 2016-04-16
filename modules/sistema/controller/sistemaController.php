@@ -1,5 +1,30 @@
 <?php
+
+require_once ROOT . DEFAULT_CORE;
+require_once ROOT . DEFAUL_FUNCTION;
+require_once ROOT . 'modules/sistema/model/sistemaModel.php';
+
 class sistemaController{
+    public $_Objvista   = null;
+    public $_modelo     = null;
+    public $_configForm = null;
+    public $_dataForm   = null;
+    public $_input      = null;
+    public $_metodo     = null;
+    public $_argumentos = null;
+
+
+//Autor:       David G -  Abr 8-2016
+//descripcion: constructor de clase
+    public function __construct(){
+        $this->_modelo               = new ModeloSistema();
+        $this->_Objvista             = new view();
+        $this->_Objvista->_diretorio = DIR_SISTEMA;
+        $this->_Objvista->_dirForm   = DIR_SISTEMA.DIR_FORM;
+        $this->_Objvista->_template  = 'index.html';
+        $this->_configForm           = array();
+        $this->_dataForm             = $cadenaSql= fbRetornaConfigForm();
+    }
 //Autor:       David G -  Abr 2-2014 
 //descripcion: Metodo de carga por defecto, valida la sesion activa en el servidor 
 //             y carga la vista del index si es una sesion valida, de lo contrario
@@ -7,56 +32,16 @@ class sistemaController{
 //             invoca los datos de configuracin de usuario desde el moduelo propio
 //             controlador.
     public function index(){
-        require_once ROOT . DEFAULT_CORE; 
-        require_once ROOT . DEFAUL_FUNCTION;
-        require_once ROOT . 'modules/sistema/model/sistemaModel.php';
-        require_once ROOT . VIEW_PACH . DS . 'view.php';
-        $dataFormGeneral=array();
-        $Objvista = new view;
-        $sistema  = new ModeloSistema();
-        if(!Session::get('usuario')){
-            $data = array('ERR'=>'12',
-                          'MSJ'=>'');
-            $cadenaSql= fbRetornaConfigForm();
-            $sistema->get_datos($cadenaSql, 'head_formulario_config="login"', 'sys_formulario_config');
-            $dataFormGeneral=$sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(275,1) as ARCHIVOSCSS');
-            $Objvista->_archivos_css = $sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(275,2) as ARCHIVOSSCRIPT');
-            $Objvista->_archivos_js  = $sistema->_data;
-            $Objvista->retornar_vista(DEFAULT_CONTROLLER,'sistema','login','login',$data,$dataFormGeneral);
-        }else{
-            $data=array();
-            $met= isset($argumentos[6]) ? $argumentos[6] : "N";
-            $sistema->get_config_usuario(Session::get('cod'));
-            $Objvista->_empresa          = $sistema->_empresa;
-            $Objvista->_notificacion     = array('des_notificacion'=>$sistema->_notificacion[0]['des_notificacion']);
-            $Objvista->_tarea            = array('des_tarea'=>$sistema->_tarea[0]['des_tarea']);
-            $var = "";
-            for($t=0;$t<count($sistema->_mensajes);$t++){$var = $var . $sistema->_mensajes[$t]['des_mensajes'];}
-            $Objvista->_mensajes         = array ('des_mensajes'=>$var);
-            $Objvista->_numMensajes      = $sistema->_numMensajes;
-            $var = "";
-            for($t=0;$t<count($sistema->_menu);$t++){$var = $var . $sistema->_menu[$t]['menu'];}
-            $Objvista->_menu             = array ('menu'=>$var);
-            $Objvista->_menuHeader       = $sistema->_menuHeader;
-            $Objvista->_menuShorcut      = $sistema->_menuShorcut;
-            $cadenaSql= fbRetornaConfigForm();
-            $sistema->get_datos($cadenaSql, 'head_formulario_config="index"', 'sys_formulario_config');
-            $dataFormGeneral=$sistema->_data;
-            $sistema->get_datos('*', ' cod_usuario='.Session::get('cod'), 'sys_usuario');
-            $data=$sistema->_data;
-            # traemos las modales configuradas para el index
-            $sistema->get_datos('fbArmaFormularioModal(1,'.Session::get('cod').') as modal');
-            $Objvista->_formulario_modal = $sistema->_data;
-            #traemos los archivos relacionados al formulario
-            $sistema->get_datos('fbDevuelveArchivos(0,1) as ARCHIVOSCSS');
-            $Objvista->_archivos_css = $sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(0,2) as ARCHIVOSSCRIPT');
-            $Objvista->_archivos_js  = $sistema->_data;
-            $sistema->get_datos('fbArmaImgEmpresa('.Session::get('cod').') as slide_empresas ');$data[0]["slide_empresas"] = !empty($sistema->_data) ? $sistema->_data : array();
-            $Objvista->retornar_vista(DEFAULT_CONTROLLER,'sistema','index','index',$data,$dataFormGeneral);
-        }
+
+        if(!Session::get('usuario'))
+            redireccionar(array('modulo'=>'sistema','met'=>'login'));
+
+        formateaIndex($this->_modelo, $this->_Objvista, 0, $this->_dataForm, 'index');
+        $this->_modelo->get_datos('fbArmaImgEmpresa('.Session::get('cod').') as slide_empresas ');
+        $data[0]["slide_empresas"] = !empty($this->_modelo->_data)?$this->_modelo->_data:array();
+        $this->_Objvista->_titulo   = 'Dashboard';
+        $this->_Objvista->_vista    = 'view_dashboard.html';
+        $this->_Objvista->_renderVista();
     }
 //Autor:       David G -  Abr 2-2014 
 //descripcion: Metodo para recuperar las credenciales de una cuenta, valida si el usuario esta activo segun el correo electronico o 
@@ -140,44 +125,18 @@ class sistemaController{
 //             desde el modulo y carga la vista de index si la sesion se valida correctamente,
 //             igualmente llena todas las variables de sesion con los metodos propios de cada usuario
 //             de lo contrario, retorna la vista de login.	
-    public function login($metodo){
-        require_once ROOT . DEFAULT_CORE; 
-        require_once ROOT . DEFAUL_FUNCTION;
-        require_once ROOT . 'modules/sistema/model/sistemaModel.php';
-        require_once ROOT . VIEW_PACH . DS . 'view.php';
-        $user_data = helper_user_data($metodo);
-        $sistema  = new ModeloSistema();
-        $Objvista = new view;
-        $dataFormGeneral=array();$data=array();
-        if($sistema->get_login($user_data)){
-            for($i=0; $i<count($sistema->_session); $i++) {	
-                    Session::set($sistema->_session[$i],$sistema->_sessionVal[$i]);
-            }
-            setVariables($sistema,$Objvista,$metodo,1,1,'','','','',1,'',64);
-            $cadenaSql= fbRetornaConfigForm();
-            $sistema->get_datos($cadenaSql, 'head_formulario_config="index"', 'sys_formulario_config');
-            $dataFormGeneral=$sistema->_data;
-            $sistema->get_datos('*', ' cod_usuario='.Session::get('cod'), 'sys_usuario');
-            $data=$sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(0,1) as ARCHIVOSCSS');
-            $Objvista->_archivos_css = $sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(0,2) as ARCHIVOSSCRIPT');
-            $Objvista->_archivos_js  = $sistema->_data;
-            $sistema->get_datos('fbArmaImgEmpresa('.Session::get('cod').') as slide_empresas ');$data[0]["slide_empresas"] = !empty($sistema->_data) ? $sistema->_data : array();
-            $Objvista->retornar_vista(DEFAULT_CONTROLLER,'sistema','index','index',$data,$dataFormGeneral);
-
+    public function login(){
+        $this->_input = formateaMetodo($this->_metodo);
+        if($this->_modelo->get_login($this->_input)){
+            redireccionar(array('modulo'=>'sistema','met'=>'index'));
         }else{
-            $data = array('ERR'=>$sistema->err,
-                              'MSJ'=>$sistema->msj);
-            $cadenaSql= fbRetornaConfigForm();
-            $sistema->get_datos($cadenaSql, 'head_formulario_config="login"', 'sys_formulario_config');
-            //var_dump($sistema->_data);exit();
-            $dataFormGeneral=$sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(0,1) as ARCHIVOSCSS');
-            $Objvista->_archivos_css = $sistema->_data;
-            $sistema->get_datos('fbDevuelveArchivos(0,2) as ARCHIVOSSCRIPT');
-            $Objvista->_archivos_js  = $sistema->_data;
-            $Objvista->retornar_vista(DEFAULT_CONTROLLER,'sistema','login','login',$data,$dataFormGeneral); 	
+            $data = array('ERR' => 3,
+                          'MSJ' => 'No ha iniciado Sesi&oacute;n');
+            $this->_Objvista->_titulo    = 'inicio de sesion';
+            $this->_Objvista->_template  = 'login.html';
+            $this->_Objvista->_asignacion->mensaje = $data;
+            $this->_Objvista->_renderVista();
+            exit();
         }
     }
 //Autor:       David G -  Abr 2-2014 
@@ -1095,27 +1054,13 @@ class sistemaController{
 //descripcion: Metodo de finalizar y destruir las variables de session,
 //             retorna la vista de login.	
     public function cerrar(){
-        require_once ROOT . DEFAULT_CORE; 
-        require_once ROOT . DEFAUL_FUNCTION;
-        require_once ROOT . 'modules/sistema/model/sistemaModel.php';
-        require_once ROOT . VIEW_PACH . DS . 'view.php';
-        $dataFormGeneral=array();
-        $Objvista = new view;
-        $sistema  = new ModeloSistema();
+
         foreach($_SESSION as $session=>$valor) {
                 Session::destroy($session);
         }
-        
-        $data = array('ERR'=>13,
-                      'MSJ'=>'');
-        $cadenaSql= fbRetornaConfigForm();
-        $sistema->get_datos($cadenaSql, 'head_formulario_config="login"', 'sys_formulario_config');
-        $dataFormGeneral=$sistema->_data;
-        $sistema->get_datos('fbDevuelveArchivos(275,1) as ARCHIVOSCSS');
-        $Objvista->_archivos_css = $sistema->_data;
-        $sistema->get_datos('fbDevuelveArchivos(275,2) as ARCHIVOSSCRIPT');
-        $Objvista->_archivos_js  = $sistema->_data;
-        $Objvista->retornar_vista(DEFAULT_CONTROLLER,'sistema','login','login',$data,$dataFormGeneral);
+
+        if(!Session::get('usuario'))
+            redireccionar(array('modulo'=>'sistema','met'=>'login'));
     }
 }
 ?>

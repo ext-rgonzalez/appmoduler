@@ -1,5 +1,9 @@
 <?php
-#constante del controller default
+#rutas librerias
+const DIR_SISTEMA        = 'modules/sistema/html/';
+const DIR_SINED          = 'modules/sined/html/';
+const DIR_FORM           = 'forms/';
+#rutas constantes
 const DEFAULT_CONTROLLER = 'sistema';
 const FA_CONTROLLER      = 'facturacion';
 const CON_CONTROLLER     = 'contabilidad';
@@ -24,7 +28,7 @@ const HD_DIR_ADJ      = 'modules/helpdesk/adjuntos/';
 const SINED_DIR_ADJ   = 'modules/sined/adjuntos/';
 const CRM_DIR_ADJ     = 'modules/crm/adjuntos/';
 const DL_DIR_ADJ      = 'modules/datolee/adjuntos/';
-const ENDO_DIR_ADJ      = 'modules/endodoncia/adjuntos/';
+const ENDO_DIR_ADJ    = 'modules/endodoncia/adjuntos/';
 #rutas controladores
 $diccionario_general = array(
     'LINK_DES'=>array(
